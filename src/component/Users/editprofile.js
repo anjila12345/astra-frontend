@@ -57,12 +57,11 @@ class Editprofilepage extends React.Component {
             firstname: this.state.firstname,
             lastname: this.state.lname,
             username: this.state.username,
-
             email: this.state.email,
             image: (this.state.image, this.state.image.name),
             password: this.state.password
         }
-        axios.put("http://localhost:3000/updates/" + this.state.id, data).then(
+        axios.put("http://localhost:3000/userupdate/" + this.state.id, data).then(
             setTimeout(function () {
                 alert("Successfully updated");
                 window.location.reload();
@@ -117,12 +116,12 @@ class Editprofilepage extends React.Component {
                                                 <div class="row">
                                                     <div className="col-xs-6 form-group">
                                                         <label >First Name</label>
-                                                        <input type="text" className="form-control" id="fname" name="fname" placeholder="First Name" value={this.state.firstname} onChange={this.handlechange} />
+                                                        <input type="text" className="form-control" id="fname" name="firstname" placeholder="First Name" value={this.state.firstname} onChange={this.handlechange} />
 
                                                     </div>
                                                     <div className="col-xs-6 form-group">
                                                         <label >Last Name</label>
-                                                        <input type="text" className="form-control" id="lname" name="lname" placeholder="Last Name" value={this.state.lastname} onChange={this.handlechange} />
+                                                        <input type="text" className="form-control" id="lname" name="lastname" placeholder="Last Name" value={this.state.lastname} onChange={this.handlechange} />
                                                     </div>
                                                 </div>
 
@@ -133,7 +132,7 @@ class Editprofilepage extends React.Component {
 
                                                 <div className=" form-group">
                                                     <label for="number">Username</label>
-                                                    <input type="text" name="number" className="form-control" placeholder="Number" value={this.state.username} onChange={this.handlechange} />
+                                                    <input type="text" name="username" className="form-control" placeholder="Username" value={this.state.username} onChange={this.handlechange} />
                                                 </div>
 
 
