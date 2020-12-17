@@ -3,16 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-avatar": "^3.9.6",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-icons": "^e3.10.0",
     "react-native-star-rating": "^1.1.0",
     "react-router-config": "^5.1.1",
@@ -41,7 +39,12 @@
     ]
   },
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5"
+  },
   "author": "",
   "license": "ISC",
   "description": ""

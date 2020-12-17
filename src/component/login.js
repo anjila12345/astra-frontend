@@ -84,7 +84,7 @@ class Login extends React.Component {
                         </div>
                         <form class="loginform">
 
-                            <p className="login-box-msg"> <b>Log In </b></p>
+                            <p className="login-box-msg"> <h2>Log In </h2></p>
                             <div className="form-group has-feedback">
                                 <input type='username' class="form-control" placeholder="Username" name='username' id='username' value={this.state.username} onChange={this.handleChange} />
                                 <error className="errormsg">
@@ -104,11 +104,11 @@ class Login extends React.Component {
 
                             </div>
                             <div class="form-group has-feedback">
-                                Don't have an account? <a href="register">SignUp</a>
+                                Don't have an account? <a id="registerh" href="register">SignUp</a>
                             </div>
 
                             <div class="btn-login">
-                                <button class="btn-login2" onClick={this.submitForm} type="submit">Sign In</button>
+                                <button class="btn-login2" id="Signin" onClick={this.submitForm} type="submit">Sign In</button>
                             </div>
                         </form>
                     </div>
