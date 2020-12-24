@@ -59,20 +59,23 @@ class Header extends React.Component {
                         <div class="navbar-custom-menu">
                             <ul class="nav navbar-nav">
                                 <li>
-                                    <a href="Login"><div className="btnhome">Login</div></a>
+                                    <a href="login"><div className="btnhome1"><i class="fa fa-lock"></i>Login</div>
+
+                                    </a>
+
                                 </li>
                                 <li>
-                                    <a href="register"><div className="btnhome1">Signup</div></a>
+                                    <a href="signup"><div className="btnhome1"><i class="fa fa-user"></i>Signup</div>
+
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </nav>
                 </header>
             </div>
-
         )
     }
-
 
 }
 export default Header
