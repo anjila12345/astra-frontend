@@ -60,9 +60,7 @@ class Header extends React.Component {
                                 <a href="Editprofile">
                                     <div class="title"><i class="	fa fa-plus"></i>Profile</div></a>
 
-                                <a href="Mypost">
-                                    <div class="title"><i class="	fa fa-newspaper-o"></i>User post
-                </div></a>
+
 
                                 <a href="Editprofile">
                                     <div class="title">
