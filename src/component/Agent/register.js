@@ -58,14 +58,14 @@ class Signuppage extends React.Component {
 
                     <div className="register-box-body">
                         <div className="register-logo">
-                            <b>Register Here</b>
+                            <h2>Register Here</h2>
                         </div>
 
                         <form>
                             <div className="row">
                                 <div className="col-xs-6 form-group has-feedback">
                                     <input className="form-control" type="text" value={this.state.firstname} onChange={(event) =>
-                                        this.setState({ firstname: event.target.value })} placeholder="First name" required />
+                                        this.setState({ firstname: event.target.value })} placeholder="First name" id="firstname" required />
                                     <error className="errormsg">
                                         {this.state.fnameerror}
                                     </error>
@@ -74,7 +74,7 @@ class Signuppage extends React.Component {
                                 </div>
                                 <div className=" col-xs-6 form-group has-feedback">
                                     <input className="form-control" type="text" value={this.state.lastname} onChange={(event) =>
-                                        this.setState({ lastname: event.target.value })} placeholder="Last name" required />
+                                        this.setState({ lastname: event.target.value })} placeholder="Last name" id="lastname" required />
                                     <error className="errormsg">
                                         {this.state.lnameerror}
                                     </error>
@@ -84,7 +84,7 @@ class Signuppage extends React.Component {
                             </div>
                             <div className="form-group has-feedback">
                                 <input className="form-control" type="email" value={this.state.email} onChange={(event) =>
-                                    this.setState({ email: event.target.value })} placeholder="Email" required />
+                                    this.setState({ email: event.target.value })} placeholder="Email" id="email" required />
                                 <error className="errormsg">
                                     {this.state.emailerror}
                                 </error>
@@ -94,7 +94,7 @@ class Signuppage extends React.Component {
                             <div className="form-group has-feedback">
 
                                 <input className="form-control" type="text" value={this.state.username} onChange={(event) =>
-                                    this.setState({ username: event.target.value })} placeholder="Username" required />
+                                    this.setState({ username: event.target.value })} placeholder="Username" id="username" required />
                                 <error className="errormsg">
                                     {this.state.numbererror}
                                 </error>
@@ -106,7 +106,7 @@ class Signuppage extends React.Component {
                             <div className="form-group has-feedback">
 
                                 <input className="form-control" type="password" value={this.state.password} onChange={(event) =>
-                                    this.setState({ password: event.target.value })} placeholder="Password" required />
+                                    this.setState({ password: event.target.value })} placeholder="Password" id="password" required />
                                 <error className="errormsg">
                                     {this.state.passworderror}
                                 </error>
@@ -115,11 +115,11 @@ class Signuppage extends React.Component {
                             </div>
                             <div class="row">
                                 <div class="col-xs-8">
-                                    <a href="agentlogin">Already have an Account ?</a>
+                                    <a href="agentlogin" id="loginf">Already have an Account ?</a>
                                 </div>
                             </div>
 
-                            <button type="submit" className="btn btn-primary btn-block btn-flat" onClick={this.sendUser}>Sign Up</button>
+                            <button type="submit" id="Signup" className="btn btn-primary btn-block btn-flat" onClick={this.sendUser}>Sign Up</button>
 
                         </form>
                     </div>
