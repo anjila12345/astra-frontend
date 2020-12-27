@@ -54,10 +54,10 @@ class Header extends React.Component {
 
                         <div class="navbar-custom-menu">
                             <div class="navbar-custom">
-                                <a href="Newsfeed">
+                                <a href="Newsfeed" id="home">
                                     <div class="title"><i class="fa fa-home"></i>Home</div></a>
 
-                                <a href="Editprofile">
+                                <a href="Editprofile" id="profile">
                                     <div class="title"><i class="	fa fa-plus"></i>Profile</div></a>
 
 
@@ -69,7 +69,7 @@ class Header extends React.Component {
                                     </div></a>
 
 
-                                <a href="Login" onClick={this.LogOut}>  <i class="fa fa-sign-out">Logout</i> </a>
+                                <a href="Login" id="logout" onClick={this.LogOut}><i class="fa fa-sign-out">Logout</i></a>
 
                             </div>
                         </div>
