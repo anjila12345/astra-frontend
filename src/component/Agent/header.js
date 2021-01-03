@@ -52,28 +52,28 @@ class Header extends React.Component {
 
                         <div className="navbar-custom-menu">
                             <div className="navbar-custom">
-                                <a href="Newsfeed">
+                                <a href="Newsfeed" id="home">
                                     <div className="title"><i className="fa fa-home"></i>Home</div></a>
 
-                                <a href="agentprofile">
+                                <a href="agentprofile" id="profile">
                                     <div className="title"><i className="	fa fa-user"></i>Profile</div></a>
 
-                                <a href="postjob">
+                                <a href="postjob" id="post">
                                     <div className="title"><i className="	fa fa-plus"></i>Post
                 </div></a>
 
-                                <a href="mypost">
+                                <a href="mypost" id="mypost">
                                     <div className="title"><i className="	fa fa-newspaper-o"></i>Mypost
                 </div></a>
 
-                                <a href="agentprofile">
+                                <a href="agentprofile" id="title">
                                     <div className="title">
 
                                         {this.state.user.firstname}
                                     </div></a>
 
 
-                                <a href="agentlogin" onClick={this.LogOut}>  <i class="fa fa-sign-out">Logout</i> </a>
+                                <a href="agentlogin" id="logout" onClick={this.LogOut}><i class="fa fa-sign-out">Logout</i></a>
 
                             </div>
                         </div>
