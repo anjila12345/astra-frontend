@@ -27,7 +27,32 @@ class Post extends Component {
             { [e.target.name]: e.target.value }
         )
     }
-
+    postcomment = (e) => {
+        e.preventDefault();
+        const data = {
+            user_id: this.state.id,
+            comment: this.state.comment,
+            post_id: this.state.post_id
+        }
+        axios.post('http://localhost:3000/postcomment', data, this.state.config)
+            .then(response => {
+                console.log(response.data.successmsg)
+                // window.location.reload();
+                this.setState({
+                    success: response.data.successmsg
+                });
+                setTimeout(function () {
+                    window.location.reload()
+                    alert("Successfully updated");
+                }, 1000);
+            })
+            .catch(error => {
+                this.setState({
+                    error: "Something went wrong. Try again!"
+                })
+                console.log(error.response.data.errmsg)
+            })
+    }
     componentDidMount() {
         axios.get('http://localhost:3000/logincheck', this.state.config)
             .then((response) => {
@@ -37,10 +62,38 @@ class Post extends Component {
                 })
 
             })
-
-
+        axios.get('http://localhost:3000/getcommentbypostid/' + this.props.post._id, this.state.config)
+            .then(res => {
+                console.log(res.data)
+                this.setState({
+                    all_comments: res.data,
+                });
+            })
     }
-
+    addtowishlist = (e) => {
+        e.preventDefault();
+        const data = {
+            post_id: this.state.post_id
+        }
+        axios.post('http://localhost:3000/addToWishlist', data, this.state.config)
+            .then(response => {
+                console.log(response.data.successmsg)
+                // window.location.reload();
+                this.setState({
+                    success: response.data.successmsg
+                });
+                setTimeout(function () {
+                    window.location.reload()
+                    alert("Successfully updated");
+                }, 1000);
+            })
+            .catch(error => {
+                this.setState({
+                    error: "Something went wrong. Try again!"
+                })
+                console.log(error.response.data.errmsg)
+            })
+    }
 
     render() {
 
@@ -53,7 +106,7 @@ class Post extends Component {
                             <a href="" ><strong >{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                             <p>{post.comment}<br />
                                 <div className="comment-date"> {(new Date(this.props.post.date)).toDateString()}  |
-              <i className="fa fa-trash" onClick={() => this.handledelete(post._id)} ></i></div>
+                              <i className="fa fa-trash" onClick={() => this.handledelete(post._id)} ></i></div>
                             </p>
                         </div>
                     </div>
@@ -68,7 +121,13 @@ class Post extends Component {
                 <div className="row post">
                     <div className="col-md-12 color-white commentname2">
                         <img src={"http://localhost:3000/image/" + this.props.post.user_id.image} style={{ marginTop: 15 }} className="img-circle" height="40px" width="40px" />
-                        <a href="" className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
+                        <a className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
+                        <div className="btnsapply">
+                            <button type="button" className="btn-primary" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
+
+                            <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.addtowishlist}><strong>  <i className="fa fa-heart-o" ></i></strong></button>
+                        </div>
+
                         <br />
 
                     </div>
