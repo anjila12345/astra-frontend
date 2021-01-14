@@ -59,14 +59,13 @@ class Header extends React.Component {
                         <div class="navbar-custom-menu">
                             <ul class="nav navbar-nav">
                                 <li>
-                                    <a href="login" id="login"><div className="btnhome1"><i class="fa fa-lock"></i>Login</div>
+                                    <a href="signin"><i class="fa fa-lock"></i>Login
 
                                     </a>
 
                                 </li>
                                 <li>
-                                    <a href="signup" id="signup"><div className="btnhome1"><i class="fa fa-user"></i>Signup</div>
-
+                                    <a href="signup"><i class="fa fa-user"></i>Register
                                     </a>
                                 </li>
                             </ul>
