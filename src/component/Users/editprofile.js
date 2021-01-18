@@ -55,7 +55,7 @@ class Editprofilepage extends React.Component {
     UpdateData = () => {
         const data = {
             firstname: this.state.firstname,
-            lastname: this.state.lname,
+            lastname: this.state.lastname,
             username: this.state.username,
             email: this.state.email,
             image: (this.state.image, this.state.image.name),
