@@ -51,25 +51,29 @@ class Header extends React.Component {
 
 
                     <nav class="navbar navbar-static-top">
+                        <div class="searchbar">
+                            <input id="textbox" type="text" placeholder="Enter to search" />
+                            <i class="fa fa-search"></i>
 
+                        </div>
                         <div class="navbar-custom-menu">
                             <div class="navbar-custom">
-                                <a href="Newsfeed" id="home">
+                                <a href="Newsfeed">
                                     <div class="title"><i class="fa fa-home"></i>Home</div></a>
 
-                                <a href="Editprofile" id="profile">
+                                <a href="Editprofile">
                                     <div class="title"><i class="	fa fa-plus"></i>Profile</div></a>
 
 
 
                                 <a href="Editprofile">
                                     <div class="title">
-
+                                        <img src={"http://localhost:3000/image/" + this.state.user.image} id="userimg" className="img-circle" alt="avatar" />
                                         {this.state.user.firstname}
                                     </div></a>
 
 
-                                <a href="Login" id="logout" onClick={this.LogOut}><i class="fa fa-sign-out">Logout</i></a>
+                                <a href="Login" onClick={this.LogOut}>  <i class="fa fa-sign-out">Logout</i> </a>
 
                             </div>
                         </div>
