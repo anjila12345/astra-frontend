@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router';
 import Header from '../component/header';
-import Footer from '../component/footer';
+import Footer from '../component/footer2';
 class Register extends React.Component {
 
     handleRedirect() {
