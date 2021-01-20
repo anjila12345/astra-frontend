@@ -102,10 +102,12 @@ class Login extends React.Component {
 
 
                             <div class="btn-login">
-                                <button class="btn btn-primary btn-block btn-flat" onClick={this.submitForm} type="submit">Sign In</button>
+
+                                <button class="btn btn-primary btn-block btn-flat" id="Signin" onClick={this.submitForm} type="submit">Sign In</button>
                             </div>
                             <div class="form-group textlogin">
-                                Don't have an account? <a href="agentregister">Register Now</a>
+                                Don't have an account? <a href="agentregister" id="registerh">Register Now</a>
+
                             </div>
                         </form>
                     </div>

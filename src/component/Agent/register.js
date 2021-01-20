@@ -61,7 +61,7 @@ class Signuppage extends React.Component {
                         <form>
                             <p className="login-box-msg"> <b>Register Here </b></p>
                             <div className="form-group has-feedback">
-                                <input className="form-control input" type="text" value={this.state.firstname} onChange={(event) =>
+                                <input className="form-control input" type="text" id="firstname" value={this.state.firstname} onChange={(event) =>
                                     this.setState({ firstname: event.target.value })} placeholder="First name" required />
                                 <error className="errormsg">
                                     {this.state.fnameerror}
@@ -70,7 +70,7 @@ class Signuppage extends React.Component {
 
                             </div>
                             <div className="  form-group has-feedback">
-                                <input className="form-control input" type="text" value={this.state.lastname} onChange={(event) =>
+                                <input className="form-control input" type="text" id="lastname" value={this.state.lastname} onChange={(event) =>
                                     this.setState({ lastname: event.target.value })} placeholder="Last name" required />
                                 <error className="errormsg">
                                     {this.state.lnameerror}
@@ -80,7 +80,7 @@ class Signuppage extends React.Component {
                             </div>
 
                             <div className="form-group has-feedback">
-                                <input className="form-control input" type="email" value={this.state.email} onChange={(event) =>
+                                <input className="form-control input" type="email" id="email" value={this.state.email} onChange={(event) =>
                                     this.setState({ email: event.target.value })} placeholder="Email" required />
                                 <error className="errormsg">
                                     {this.state.emailerror}
@@ -90,7 +90,7 @@ class Signuppage extends React.Component {
                             </div>
                             <div className="form-group has-feedback">
 
-                                <input className="form-control input" type="text" value={this.state.username} onChange={(event) =>
+                                <input className="form-control input" type="text" id="username" value={this.state.username} onChange={(event) =>
                                     this.setState({ username: event.target.value })} placeholder="Username" required />
                                 <error className="errormsg">
                                     {this.state.numbererror}
@@ -102,7 +102,7 @@ class Signuppage extends React.Component {
 
                             <div className="form-group has-feedback">
 
-                                <input className="form-control input" type="password" value={this.state.password} onChange={(event) =>
+                                <input className="form-control input" type="password" id="password" value={this.state.password} onChange={(event) =>
                                     this.setState({ password: event.target.value })} placeholder="Password" required />
                                 <error className="errormsg">
                                     {this.state.passworderror}
@@ -112,9 +112,9 @@ class Signuppage extends React.Component {
                             </div>
 
 
-                            <button type="submit" className="btn btn-primary btn-block btn-flat" onClick={this.sendUser}>Sign Up</button>
+                            <button type="submit" className="btn btn-primary btn-block btn-flat" id="Signup" onClick={this.sendUser}>Sign Up</button>
                             <div class="form-group textlogin">
-                                <a href="agentlogin">Already have an Account ?</a>
+                                <a href="agentlogin" id="loginf">Already have an Account ?</a>
                             </div>
                         </form>
                     </div>
