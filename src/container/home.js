@@ -1,6 +1,6 @@
 import React from 'react'
 import Indexpage from '../component/home';
-import Header from '../component/header';
+import Header from '../component/header2';
 import Footer from '../component/footer';
 
 
