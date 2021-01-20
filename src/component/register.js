@@ -57,33 +57,31 @@ class Signuppage extends React.Component {
                 <div className="register-box">
 
                     <div className="register-box-body">
-                        <div className="register-logo">
-                            <h2>Register Here</h2>
-                        </div>
+
 
                         <form>
-                            <div className="row">
-                                <div className="col-xs-6 form-group has-feedback">
-                                    <input className="form-control" id="firstname" type="text" value={this.state.firstname} onChange={(event) =>
-                                        this.setState({ firstname: event.target.value })} placeholder="First name" required />
-                                    <error className="errormsg">
-                                        {this.state.fnameerror}
-                                    </error>
-                                    <span class="glyphicon glyphicon-user form-control-feedback1"></span>
+                            <p className="login-box-msg"> <b>Register Here </b></p>
+                            <div className=" form-group has-feedback">
+                                <input className="form-control input" type="text" id="firstname" value={this.state.firstname} onChange={(event) =>
+                                    this.setState({ firstname: event.target.value })} placeholder="First name" required />
+                                <error className="errormsg">
+                                    {this.state.fnameerror}
+                                </error>
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
-                                </div>
-                                <div className=" col-xs-6 form-group has-feedback">
-                                    <input className="form-control" id="lastname" type="text" value={this.state.lastname} onChange={(event) =>
-                                        this.setState({ lastname: event.target.value })} placeholder="Last name" required />
-                                    <error className="errormsg">
-                                        {this.state.lnameerror}
-                                    </error>
-                                    <span class="glyphicon glyphicon-user form-control-feedback1"></span>
-
-                                </div>
                             </div>
+                            <div className="  form-group has-feedback">
+                                <input className="form-control input" type="text" id="lastname" value={this.state.lastname} onChange={(event) =>
+                                    this.setState({ lastname: event.target.value })} placeholder="Last name" required />
+                                <error className="errormsg">
+                                    {this.state.lnameerror}
+                                </error>
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                            </div>
+
                             <div className="form-group has-feedback">
-                                <input className="form-control" id="email" type="email" value={this.state.email} onChange={(event) =>
+                                <input className="form-control input" type="email" id="email" value={this.state.email} onChange={(event) =>
                                     this.setState({ email: event.target.value })} placeholder="Email" required />
                                 <error className="errormsg">
                                     {this.state.emailerror}
@@ -93,7 +91,7 @@ class Signuppage extends React.Component {
                             </div>
                             <div className="form-group has-feedback">
 
-                                <input className="form-control" id="username" type="text" value={this.state.username} onChange={(event) =>
+                                <input className="form-control input" type="text" id="username" value={this.state.username} onChange={(event) =>
                                     this.setState({ username: event.target.value })} placeholder="Username" required />
                                 <error className="errormsg">
                                     {this.state.numbererror}
@@ -105,7 +103,7 @@ class Signuppage extends React.Component {
 
                             <div className="form-group has-feedback">
 
-                                <input className="form-control" id="password" type="password" value={this.state.password} onChange={(event) =>
+                                <input className="form-control input" type="password" id="password" value={this.state.password} onChange={(event) =>
                                     this.setState({ password: event.target.value })} placeholder="Password" required />
                                 <error className="errormsg">
                                     {this.state.passworderror}
@@ -113,14 +111,13 @@ class Signuppage extends React.Component {
                                 <span className="glyphicon glyphicon-lock form-control-feedback"></span>
 
                             </div>
-                            <div class="row">
-                                <div class="col-xs-8">
-                                    <a href="login" id="loginf">Already have an Account ?</a>
-                                </div>
-                            </div>
+
 
                             <button type="submit" id="Signup" className="btn btn-primary btn-block btn-flat" onClick={this.sendUser}>Sign Up</button>
 
+                            <div class="form-group textlogin">
+                                <a href="login" id="loginf">Already have an Account ?</a>
+                            </div>
                         </form>
                     </div>
 
@@ -128,7 +125,7 @@ class Signuppage extends React.Component {
 
 
                 </div>
-            </div>
+            </div >
 
 
         )
