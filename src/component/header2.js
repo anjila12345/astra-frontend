@@ -62,7 +62,7 @@ class Header extends React.Component {
                                 <li><a href="#services">Services</a></li>
                                 <li><a href="#team">Team</a></li>
                                 <li><a href="#contact">Contact</a></li>
-                                <li class="drop-down"><a href="">Signin<i class="fa fa-angle-down"></i></a>
+                                <li class="drop-down"><a href=""><i class="fa fa-user"></i>Member<i class="fa fa-angle-down"></i></a>
                                     <ul>
                                         <li><a href="signin">Login</a></li>
 
