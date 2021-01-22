@@ -90,6 +90,22 @@ class Post extends Component {
             })
     }
 
+    AddTofaviourite = (e) => {
+        e.preventDefault();
+        const data = {
+            post_id: this.state.post_id,
+            user_id: this.state.id
+        }
+        axios.put('http://localhost:3000/addToFaviourite', data, this.state.config)
+        .then(res =>{
+            console.log(this.state.post_id)
+            alert('the post has been liked')
+        })
+        .catch((err) => {
+            console.log(err);
+        }) 
+    }
+
     render() {
 
         const commentbox = this.state.all_comments.map((post) => {
