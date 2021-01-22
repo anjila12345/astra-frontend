@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import Newsfeedpage from '../../component/Users/Newsfeed';
 import Header from '../../component/Users/header';
-import Footer from '../../component/footer';
+import Footer from '../../component/footer2';
 import axios from 'axios'
 class Newsfeed extends React.Component {
     constructor(props) {
@@ -45,10 +45,6 @@ class Newsfeed extends React.Component {
                 <Header />
                 <Newsfeedpage post={this.state.posts} user={this.state.user} />
                 <Footer />
-
-
-
-
             </div>
 
         )
