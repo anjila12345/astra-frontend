@@ -13,7 +13,7 @@ class Post extends Component {
             all_comments: [],
             comment: "",
             id: this.props.post.user_id._id,
-            post_id: this.props.post._id,
+            post_id: this.props.post_id,
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             }
@@ -73,19 +73,14 @@ class Post extends Component {
     addtowishlist = (e) => {
         e.preventDefault();
         const data = {
+            user_id: this.state.id,
             post_id: this.state.post_id
         }
-        axios.post('http://localhost:3000/addToWishlist', data, this.state.config)
+        axios.put('http://localhost:3000/addToWishlist', data, this.state.config)
             .then(response => {
-                console.log(response.data.successmsg)
-                // window.location.reload();
-                this.setState({
-                    success: response.data.successmsg
-                });
-                setTimeout(function () {
-                    window.location.reload()
-                    alert("Successfully updated");
-                }, 1000);
+                console.log(this.state.post_id)
+                console.log(response.data)
+                alert("successful")
             })
             .catch(error => {
                 this.setState({
@@ -93,6 +88,22 @@ class Post extends Component {
                 })
                 console.log(error.response.data.errmsg)
             })
+    }
+
+    AddTofaviourite = (e) => {
+        e.preventDefault();
+        const data = {
+            post_id: this.state.post_id,
+            user_id: this.state.id
+        }
+        axios.put('http://localhost:3000/addToFaviourite', data, this.state.config)
+        .then(res =>{
+            console.log(this.state.post_id)
+            alert('the post has been liked')
+        })
+        .catch((err) => {
+            console.log(err);
+        }) 
     }
 
     render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Editprofilepage from '../../component/Agent/editprofile';
 import Header from '../../component/Agent/header';
-import Footer from '../../component/footer';
+import Footer from '../../component/footer2';
 
 
 

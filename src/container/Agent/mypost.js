@@ -1,7 +1,7 @@
 import React from 'react'
 import Mypostpage from '../../component/Agent/mypost';
 import Header from '../../component/Agent/header';
-import Footer from '../../component/footer';
+import Footer from '../../component/footer2';
 
 class Mypost extends React.Component {
     render() {
