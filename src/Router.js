@@ -21,6 +21,11 @@ import Postjob from './container/Agent/addjob'
 import Mypost from './container/Agent/mypost'
 
 
+
+import Profile from './component/Profile'
+import ApplyPost from './component/Users/ApplyPost';
+
+
 //admin
 import Dashboard from './component/Admin/adminDashboard';
 import Userdetails from './container/Admin/userdetails';
@@ -51,6 +56,9 @@ class Router extends Component {
                     <Route exact path="/agentdetails" component={Agentdetails} />
                     <Route exact path="/adminprofile" component={Adminprofile} />
 
+                    <Route exact path="/profile" component={Profile}/>
+
+                    <Route exact path="/userjobpost" component={ApplyPost} />
                 </Switch>
             </BrowserRouter>
         )
