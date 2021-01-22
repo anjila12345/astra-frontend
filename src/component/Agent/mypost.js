@@ -155,7 +155,7 @@ class Mypostpage extends React.Component {
                         <div className="container">
                             <div className="row">
 
-                                <div className="col-md-9 bg-white padding-2">
+                                <div className="col-md-9 bg-white1 padding-2">
                                     <form action="#" method="post" enctype="multipart/form-data" className="p-5 bg-white">
                                         <div>
                                             <div className="title-post">
