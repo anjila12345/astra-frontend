@@ -426,7 +426,7 @@ ul {
 }
 .commentname3{
     margin-left: 30px;
-    margin-top:80px;
+    margin-top:20px;
 }
 
 /* profile */
@@ -478,19 +478,19 @@ ul {
 }
 /* comment */
 .inputcomment {
-    margin-left: 24px;
-    width: 580px;
-    background-color: white;
+    margin-left: 20px;
+    width: 500px;
+    background-color: #eee;
     border-radius: 40px;
     height: 47px;
-    border: 1px solid #5e5e5e;
+    
     margin-top: 10px;
 }
 #textbox1 {
     line-height: 25px;
     background: none;
     font-size: 15px;
-    width: 480px;
+    width: 400px;
     margin-left: 7px;
     border: none;
     outline: none;
@@ -522,9 +522,18 @@ ul {
 }
 .btnsapply{
     
-    padding-left: 500px;
+    padding-left: 450px;
     margin-top: -50px;
+    margin-left: 15px;
 }
+/* Rating */
+.rating{
+  margin-left: 35px;
+
+ 
+  margin-top: 10px;
+}
+
 
 /* post update */
 .postbtns {

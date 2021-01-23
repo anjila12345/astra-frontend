@@ -13,9 +13,7 @@ class Post extends Component {
             all_comments: [],
             comment: "",
             id: this.props.post.user_id._id,
-            post_id: this.props.post_id,
-            favourite: this.props.post.favourite,
-            user:{},
+            post_id: this.props.post._id,
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             }
@@ -55,6 +53,13 @@ class Post extends Component {
                 console.log(error.response.data.errmsg)
             })
     }
+    handledelete(id, index) {
+        axios.delete("http://localhost:3000/deletecomment/" + id).then((res) => {
+            this.state.all_comments.splice();
+            window.location.reload();
+        })
+    }
+
     componentDidMount() {
         axios.get('http://localhost:3000/logincheck', this.state.config)
             .then((response) => {
@@ -67,7 +72,6 @@ class Post extends Component {
         axios.get('http://localhost:3000/getcommentbypostid/' + this.props.post._id, this.state.config)
             .then(res => {
                 console.log(res.data)
-                // console.log(this.props.post.favourite)
                 this.setState({
                     all_comments: res.data,
                 });
@@ -96,7 +100,6 @@ class Post extends Component {
                 console.log(error.response.data.errmsg)
             })
     }
-
     AddTofaviourite = (e) => {
         e.preventDefault();
         const data = {
@@ -104,19 +107,19 @@ class Post extends Component {
             user_id: this.state.id
         }
         axios.put('http://localhost:3000/addToFavourite', data, this.state.config)
-        .then(res =>{
-            // console.log(this.props.post._id)
-            // console.log(this.state.id)
-            // console.log(res.data)
-            // alert('the post has been liked')
-            setTimeout(function () {
-                window.location.reload()
-                // alert("Successfully updated");
-            }, 1000);
-        })
-        .catch((err) => {
-            console.log(err);
-        }) 
+            .then(res => {
+                // console.log(this.props.post._id)
+                // console.log(this.state.id)
+                // console.log(res.data)
+                // alert('the post has been liked')
+                setTimeout(function () {
+                    window.location.reload()
+                    // alert("Successfully updated");
+                }, 1000);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
     DeleteTofaviourite = (e) => {
@@ -126,19 +129,18 @@ class Post extends Component {
             user_id: this.state.id
         }
         axios.put('http://localhost:3000/deleteFromFavourite', data, this.state.config)
-        .then(res =>{
-            // console.log(this.props.post_id)
-            // alert('the post has been unliked')
-            setTimeout(function () {
-                window.location.reload()
-                // alert("Successfully updated");
-            }, 1000);
-        })
-        .catch((err) => {
-            console.log(err);
-        }) 
+            .then(res => {
+                // console.log(this.props.post_id)
+                // alert('the post has been unliked')
+                setTimeout(function () {
+                    window.location.reload()
+                    // alert("Successfully updated");
+                }, 1000);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
-
     render() {
 
         const commentbox = this.state.all_comments.map((post) => {
@@ -168,10 +170,8 @@ class Post extends Component {
                         <a className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                         <div className="btnsapply">
                             <button type="button" className="btn-primary" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
-                        {this.props.post.favourite.includes(this.state.id)
-                        ?<button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-star fa-2x" style={{color:"#C8D80D"}} ></i></strong></button>
-                        :<button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.AddTofaviourite}><strong>  <i className="fa fa-star-o fa-2x" style={{color:"#C8D80D"}}></i></strong></button>
-                        }
+
+                            <button type="button" className="btn-primary" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
                         </div>
 
                         <br />
@@ -181,9 +181,18 @@ class Post extends Component {
                         <p><strong>{this.props.post.title}</strong></p>
                         <p>{this.props.post.description}</p>
                     </div>
-                    <div className="col-md-12 inputcomment">
-                        <input id="textbox1" type="text" placeholder="Add comment..." name="comment" onChange={this.handleChange} />
-                        <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.postcomment}><strong>Post</strong></button>
+
+                    <div className="row">
+                        <div className=" rating">
+                            {this.props.post.favourite.includes(this.state.id)
+                                ? <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-star fa-2x" style={{ color: "#C8D80D" }} ></i></strong></button>
+                                : <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.AddTofaviourite}><strong>  <i className="fa fa-star-o fa-2x" style={{ color: "#C8D80D" }}></i></strong></button>
+                            }
+                        </div>
+                        <div className=" inputcomment">
+                            <input id="textbox1" type="text" placeholder="Add comment..." name="comment" onChange={this.handleChange} />
+                            <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.postcomment}><strong>Post</strong></button>
+                        </div>
                     </div>
                     {commentbox}
                 </div>
