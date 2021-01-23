@@ -14,6 +14,8 @@ class Post extends Component {
             comment: "",
             id: this.props.post.user_id._id,
             post_id: this.props.post_id,
+            favourite: this.props.post.favourite,
+            user:{},
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             }
@@ -65,6 +67,7 @@ class Post extends Component {
         axios.get('http://localhost:3000/getcommentbypostid/' + this.props.post._id, this.state.config)
             .then(res => {
                 console.log(res.data)
+                // console.log(this.props.post.favourite)
                 this.setState({
                     all_comments: res.data,
                 });
@@ -81,6 +84,10 @@ class Post extends Component {
                 console.log(this.state.post_id)
                 console.log(response.data)
                 alert("successful")
+                setTimeout(function () {
+                    window.location.reload()
+                    alert("Successfully updated");
+                }, 1000);
             })
             .catch(error => {
                 this.setState({
@@ -93,13 +100,39 @@ class Post extends Component {
     AddTofaviourite = (e) => {
         e.preventDefault();
         const data = {
-            post_id: this.state.post_id,
+            post_id: this.props.post._id,
             user_id: this.state.id
         }
-        axios.put('http://localhost:3000/addToFaviourite', data, this.state.config)
+        axios.put('http://localhost:3000/addToFavourite', data, this.state.config)
         .then(res =>{
-            console.log(this.state.post_id)
-            alert('the post has been liked')
+            // console.log(this.props.post._id)
+            // console.log(this.state.id)
+            // console.log(res.data)
+            // alert('the post has been liked')
+            setTimeout(function () {
+                window.location.reload()
+                // alert("Successfully updated");
+            }, 1000);
+        })
+        .catch((err) => {
+            console.log(err);
+        }) 
+    }
+
+    DeleteTofaviourite = (e) => {
+        e.preventDefault();
+        const data = {
+            post_id: this.props.post._id,
+            user_id: this.state.id
+        }
+        axios.put('http://localhost:3000/deleteFromFavourite', data, this.state.config)
+        .then(res =>{
+            // console.log(this.props.post_id)
+            // alert('the post has been unliked')
+            setTimeout(function () {
+                window.location.reload()
+                // alert("Successfully updated");
+            }, 1000);
         })
         .catch((err) => {
             console.log(err);
@@ -135,8 +168,10 @@ class Post extends Component {
                         <a className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                         <div className="btnsapply">
                             <button type="button" className="btn-primary" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
-
-                            <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.addtowishlist}><strong>  <i className="fa fa-heart-o" ></i></strong></button>
+                        {this.props.post.favourite.includes(this.state.id)
+                        ?<button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-heart" ></i></strong></button>
+                        :<button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.AddTofaviourite}><strong>  <i className="fa fa-heart-o" ></i></strong></button>
+                        }
                         </div>
 
                         <br />
