@@ -74,9 +74,9 @@ class Post extends Component {
         e.preventDefault();
         const data = {
             user_id: this.state.id,
-            post_id: this.state.post_id
+            post_id: this.props.post._id
         }
-        axios.put('http://localhost:3000/addToWishlist', data, this.state.config)
+        axios.put(`http://localhost:3000/addToWishlist`, data, this.state.config)
             .then(response => {
                 console.log(this.state.post_id)
                 console.log(response.data)
