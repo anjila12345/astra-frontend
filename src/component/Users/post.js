@@ -169,8 +169,8 @@ class Post extends Component {
                         <div className="btnsapply">
                             <button type="button" className="btn-primary" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
                         {this.props.post.favourite.includes(this.state.id)
-                        ?<button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-heart" ></i></strong></button>
-                        :<button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.AddTofaviourite}><strong>  <i className="fa fa-heart-o" ></i></strong></button>
+                        ?<button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-star fa-2x" style={{color:"#C8D80D"}} ></i></strong></button>
+                        :<button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.AddTofaviourite}><strong>  <i className="fa fa-star-o fa-2x" style={{color:"#C8D80D"}}></i></strong></button>
                         }
                         </div>
 
@@ -181,10 +181,6 @@ class Post extends Component {
                         <p><strong>{this.props.post.title}</strong></p>
                         <p>{this.props.post.description}</p>
                     </div>
-
-
-
-
                     <div className="col-md-12 inputcomment">
                         <input id="textbox1" type="text" placeholder="Add comment..." name="comment" onChange={this.handleChange} />
                         <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.postcomment}><strong>Post</strong></button>
