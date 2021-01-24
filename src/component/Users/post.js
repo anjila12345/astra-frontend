@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+// import moment from 'moment';
+import date from 'date-and-time';
+const now = new Date();
+
 
 
 class Post extends Component {
@@ -43,7 +47,7 @@ class Post extends Component {
                 });
                 setTimeout(function () {
                     window.location.reload()
-                    alert("Successfully updated");
+                    // alert("Successfully updated");
                 }, 1000);
             })
             .catch(error => {
@@ -151,7 +155,7 @@ class Post extends Component {
                         <div className="comment-text">
                             <a href="" ><strong >{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                             <p>{post.comment}<br />
-                                <div className="comment-date"> {(new Date(this.props.post.date)).toDateString()}  |
+                                <div className="comment-date"> {date.format(now, 'YYYY/MM/DD')}  |
                               <i className="fa fa-trash" onClick={() => this.handledelete(post._id)} ></i></div>
                             </p>
                         </div>
@@ -183,6 +187,9 @@ class Post extends Component {
                     </div>
 
                     <div className="row">
+                        {this.props.post.favourite.length == 0
+                            ? <h3></h3>
+                            : <h3>{this.props.post.favourite.length}</h3>}
                         <div className=" rating">
                             {this.props.post.favourite.includes(this.state.id)
                                 ? <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-star fa-2x" style={{ color: "#C8D80D" }} ></i></strong></button>
