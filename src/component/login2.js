@@ -25,13 +25,13 @@ class Register extends React.Component {
                                 <h3 className="title1">Login to the system</h3>
                                 <div className="User">
 
-                                    <a href="login">
+                                    <a href="login" id="loginn">
                                         <img src={"img/jobseaker.jpg"} className="Agent" />
                                         <div className="title">Jobseeker</div></a>
 
 
 
-                                    <a href="agentlogin">
+                                    <a href="agentlogin" id="agentloginn">
                                         <img src={"img/emp.png"} className="Agent" />
                                         <div className="title">Employer</div></a>
 
