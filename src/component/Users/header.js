@@ -15,8 +15,8 @@ class Header extends React.Component {
             profileimage: '',
             name: '',
             post: [],
-            searchPost:[],
-            search:'',
+            searchPost: [],
+            search: '',
             user: {},
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
@@ -40,18 +40,18 @@ class Header extends React.Component {
 
     searchedPost = (query) => {
         this.setState({
-          search: query
+            search: query
         });
-        axios.post(`http://localhost:3000/searchPost`, { query: this.state.search})
-          .then((res) => {
-            // console.log(res.data)
-            // console.log(this.state.search)
-            this.setState({
-              searchPost: res.data
+        axios.post(`http://localhost:3000/searchPost`, { query: this.state.search })
+            .then((res) => {
+                // console.log(res.data)
+                // console.log(this.state.search)
+                this.setState({
+                    searchPost: res.data
+                })
             })
-          })
-          .catch((err) => console.log(err))
-      }
+            .catch((err) => console.log(err))
+    }
 
     render() {
 
@@ -70,7 +70,7 @@ class Header extends React.Component {
                             <i class="fa fa-search"></i>
                             <ListGroup>
                                 {
-                                    this.state.searchPost.map(searchedItem => 
+                                    this.state.searchPost.map(searchedItem =>
                                         <ListGroupItem>
                                             {searchedItem.title}
                                         </ListGroupItem>)
@@ -85,6 +85,10 @@ class Header extends React.Component {
 
                                 <a href="Editprofile">
                                     <div class="title"><i class="	fa fa-plus"></i>Profile</div></a>
+
+                                <a href="wishlist">
+                                    <div class="title"><i class="	fa fa-plus"></i>Wishlist</div></a>
+
 
 
 
