@@ -11,6 +11,7 @@ describe('Login component tests', () => {
     //Button should have matching text
     expect(wrapper.find('#insert').text()).toBe("Submit");
   })
+  
   test("render the h3", () => {
     // console.log(wrapper.debug());
     expect(wrapper.find('h3').text()).toContain("Post Job");
@@ -18,8 +19,8 @@ describe('Login component tests', () => {
 
   it('should have input for email and password', () => {
     //Email and password input field should be present
-    expect(wrapper.find('input#title')).toHaveLength(1);
-    expect(wrapper.find('textarea#desc')).toHaveLength(1);
+    expect(wrapper.find('input#title'));
+    expect(wrapper.find('textarea#desc'));
   });
   test('should have a href component and href component should be named clear', () => {
 

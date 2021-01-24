@@ -1,7 +1,7 @@
 import React from 'react'
 import Loginpage from '../../component/Agent/login';
 import Header from '../../component/header';
-import Footer from '../../component/footer';
+import Footer from '../../component/footer2';
 
 
 
