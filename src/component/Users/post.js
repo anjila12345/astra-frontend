@@ -172,10 +172,11 @@ class Post extends Component {
                     <div className="col-md-12 color-white commentname2">
                         <img src={"http://localhost:3000/image/" + this.props.post.user_id.image} style={{ marginTop: 15 }} className="img-circle" height="40px" width="40px" />
                         <a className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
+                        <div className="post-date"> {date.format(now, 'YYYY/MM/DD')}  </div>
                         <div className="btnsapply">
-                            <button type="button" className="btn-primary" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
+                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
 
-                            <button type="button" className="btn-primary" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
+                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
                         </div>
 
                         <br />
