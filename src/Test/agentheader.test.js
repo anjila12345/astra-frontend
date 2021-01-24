@@ -9,7 +9,7 @@ describe('Aheader component tests', () => {
     //There should be only one button
     expect(wrapper.find('href'));
     //Button should have matching text
-    expect(wrapper.find('#home').text()).toBe("Home");
+    expect(wrapper.find('#agentprofile').text());
   })
 
   test('should have a href component and href component should be named profile', () => {

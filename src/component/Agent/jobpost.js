@@ -108,9 +108,9 @@ class jobpost extends React.Component {
                                             </div>
                                             <div className="box-footer">
                                                 <div className="postdata">
-                                                    <button type="submit" onClick={this.postdata} className="btn btn-primary" >Submit</button>
+                                                    <button type="submit" onClick={this.postdata} className="btn btn-primary" id="insert">Submit</button>
                                                 </div>
-                                                <a href="#" className="btn btn-primary"> Clear</a>
+                                                <a href="#" className="btn btn-primary" id="clear">Clear</a>
                                             </div>
 
                                         </div>

@@ -80,26 +80,26 @@ class Header extends React.Component {
                         </div>
                         <div class="navbar-custom-menu">
                             <div class="navbar-custom">
-                                <a href="Newsfeed">
+                                <a href="Newsfeed" id="home">
                                     <div class="title"><i class="fa fa-home"></i>Home</div></a>
 
-                                <a href="Editprofile">
+                                <a href="Editprofile" id="profile">
                                     <div class="title"><i class="	fa fa-plus"></i>Profile</div></a>
 
-                                <a href="wishlist">
+                                <a href="wishlist" id="wishlist">
                                     <div class="title"><i class="	fa fa-plus"></i>Wishlist</div></a>
 
 
 
 
-                                <a href="Editprofile">
+                                <a href="Editprofile" id='editprofile'>
                                     <div class="title">
                                         <img src={"http://localhost:3000/image/" + this.state.user.image} id="userimg" className="img-circle" alt="avatar" />
                                         {this.state.user.firstname}
                                     </div></a>
 
 
-                                <a href="Login" onClick={this.LogOut}>  <i class="fa fa-sign-out">Logout</i> </a>
+                                <a href="Login" onClick={this.LogOut} id="logout"><i class="fa fa-sign-out">Logout</i></a>
 
                             </div>
                         </div>
