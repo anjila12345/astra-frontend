@@ -32,18 +32,39 @@ class wishlist extends Component {
                     username: response.data.username,
 
                 })
-                axios.get('http://localhost:3000/findblogbyuserid/' + response.data._id, this.state.config)
-                    .then((response) => {
-                        console.log(response.data)
-                        this.setState({ post: response.data })
+            })
+        axios.get('http://localhost:3000/getAllWishlist', this.state.id, this.state.config)
+            .then((res) => {
+                console.log(res.data)
+                this.setState({ post: res.data })
 
-
-                    })
 
             })
     }
 
-
+    deleteFromWishlist = (postid) => {
+        // e.preventDefault();
+        const data = {
+            user_id: this.state.id,
+            post_id: postid
+        }
+        axios.put(`http://localhost:3000/deleteFromWishlist`, data, this.state.config)
+            .then(response => {
+                console.log(postid)
+                console.log(response.data)
+                alert("deleted from the wishlist")
+                setTimeout(function () {
+                    window.location.reload()
+                    // alert("Successfully updated");
+                }, 1000);
+            })
+            .catch(error => {
+                this.setState({
+                    error: "Something went wrong. Try again!"
+                })
+                console.log(error.response.data.errmsg)
+            })
+    }
 
 
 
@@ -57,7 +78,11 @@ class wishlist extends Component {
                         <div className="col-md-12 color-white  commentname2">
                             <img src={"http://localhost:3000/image/" + post.user_id.image} style={{ marginTop: 15 }} className="img-circle" height="45px" width="45px" />
                             <a href="#" ><strong>{post.user_id.firstname + " " + post.user_id.lastname}</strong> </a>
+                            <div className="btnsapply">
+                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
 
+                            <button type="button" className="btn-danger apply" style={{ marginTop: 15, backgroundColor:'red' }} onClick={() => this.deleteFromWishlist(post._id)}>Delete</button>
+                        </div>
                         </div>
                         <div className=" commentname3">
                             <p><strong>{post.title}</strong></p>
@@ -84,7 +109,7 @@ class wishlist extends Component {
                                         <div>
                                             <div className="title-post">
 
-                                                <h3 className="mb-3 color-blue"><b>My Posts</b></h3>
+                                                <h3 className="mb-3 color-blue"><b>My Wishlist</b></h3>
                                             </div>
                                             <div className="container-form">
                                                 {photoblog}
