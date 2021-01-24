@@ -522,9 +522,19 @@ ul {
 }
 .btnsapply{
     
-    padding-left: 450px;
+    padding-left: 400px;
     margin-top: -50px;
     margin-left: 15px;
+}
+.apply{
+  margin-left: 10px;
+  border-radius: 10px;
+  width:70px;
+  height: 30px;
+}
+.post-title{
+  padding-left: 10px;
+  padding-top: 10px;
 }
 /* Rating */
 .rating{
