@@ -18,6 +18,7 @@ class Post extends Component {
             comment: "",
             id: this.props.post.user_id._id,
             post_id: this.props.post._id,
+            newuser: '',
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             }
@@ -69,11 +70,12 @@ class Post extends Component {
             .then((response) => {
                 this.setState({
                     user: response.data,
-                    id: response.data._id
+                    id: response.data._id,
+                    newuser: response.data
                 })
 
             })
-        axios.get('http://localhost:3000/getcommentbypostid/' + this.props.post._id, this.state.config)
+        axios.get('http://localhost:3000/getcommentbypostid/', this.props.post._id, this.state.config)
             .then(res => {
                 console.log(res.data)
                 this.setState({
@@ -91,17 +93,18 @@ class Post extends Component {
             .then(response => {
                 console.log(this.state.post_id)
                 console.log(response.data)
-                alert("successful")
-                setTimeout(function () {
-                    window.location.reload()
-                    alert("Successfully updated");
-                }, 1000);
+                alert("add to wishlist")
+                console.log(this.state.newuser.wishlist)
+                // setTimeout(function () {
+                //     window.location.reload()
+                //     // alert("Successfully updated");
+                // }, 1000);
             })
             .catch(error => {
                 this.setState({
                     error: "Something went wrong. Try again!"
                 })
-                console.log(error.response.data.errmsg)
+                console.log(error.response)
             })
     }
     AddTofaviourite = (e) => {
@@ -175,8 +178,10 @@ class Post extends Component {
                         <div className="post-date"> {date.format(now, 'YYYY/MM/DD')}  </div>
                         <div className="btnsapply">
                             <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
-
+                            {/* {this.state.id.wishlist.includes(this.props.post._id)
+                                ? <h3></h3> */}
                             <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
+                            {/* } */}
                         </div>
 
                         <br />
@@ -188,10 +193,13 @@ class Post extends Component {
                     </div>
 
                     <div className="row">
-                        {this.props.post.favourite.length == 0
-                            ? <h3></h3>
-                            : <h3>{this.props.post.favourite.length}</h3>}
+                        <div className="starrating">
+                            {this.props.post.favourite.length == 0
+                                ? <h3></h3>
+                                : <h3>{this.props.post.favourite.length}</h3>}
+                        </div>
                         <div className=" rating">
+
                             {this.props.post.favourite.includes(this.state.id)
                                 ? <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-star fa-2x" style={{ color: "#C8D80D" }} ></i></strong></button>
                                 : <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.AddTofaviourite}><strong>  <i className="fa fa-star-o fa-2x" style={{ color: "#C8D80D" }}></i></strong></button>

@@ -538,10 +538,14 @@ ul {
 }
 /* Rating */
 .rating{
-  margin-left: 35px;
-
  
   margin-top: 10px;
+ 
+}
+.starrating{
+  margin-left: 35px; 
+  margin-top: 7px;
+
 }
 
 
