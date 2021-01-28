@@ -80,7 +80,7 @@ class Login extends React.Component {
 
                         <form class="loginform">
 
-                            <p className="login-box-msg"> <b>Log In </b></p>
+                            <h2 className="login-box-msg"> <b>Log In </b></h2>
                             <div className="form-group has-feedback">
                                 <input type='username' class="form-control input" placeholder="Username" name='username' id='username' value={this.state.username} onChange={this.handleChange} />
                                 <error className="errormsg">

@@ -539,8 +539,6 @@ ul {
 /* Rating */
 .rating{
   margin-left: 35px;
-
- 
   margin-top: 10px;
 }
 
@@ -851,4 +849,20 @@ padding:10px
     color: #333;
     font-size: 14px;
   }
-  
+   /* apply form */
+   .inputapply{
+    width:70%
+  }
+  .education h5{
+    margin-top: 35px;
+    color:rgb(126, 190, 233);
+    
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  #label{
+    color: #90949c;
+    font-weight: bold;
+    
+    font-size: 10px;
+  }

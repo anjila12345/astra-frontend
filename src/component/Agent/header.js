@@ -54,18 +54,18 @@ class Header extends React.Component {
                             <div className="navbar-custom">
 
 
-                                <a href="agentprofile">
+                                <a href="agentprofile" id="profile">
                                     <div className="title"><i className="	fa fa-user"></i>Profile</div></a>
 
-                                <a href="postjob">
+                                <a href="postjob" id="post">
                                     <div className="title"><i className="	fa fa-plus"></i>Post
                 </div></a>
 
-                                <a href="mypost">
+                                <a href="mypost" id="mypost">
                                     <div className="title"><i className="	fa fa-newspaper-o"></i>Mypost
                 </div></a>
 
-                                <a href="agentprofile">
+                                <a href="agentprofile" id="agentprofile">
                                     <div className="title">
                                         <img src={"http://localhost:3000/image/" + this.state.user.image} id="userimg" className="img-circle" alt="avatar" />
 
@@ -73,7 +73,7 @@ class Header extends React.Component {
                                     </div></a>
 
 
-                                <a href="agentlogin" onClick={this.LogOut}>  <i class="fa fa-sign-out">Logout</i> </a>
+                                <a href="agentlogin" id="logout" onClick={this.LogOut}><i class="fa fa-sign-out">Logout</i></a>
 
                             </div>
                         </div>
