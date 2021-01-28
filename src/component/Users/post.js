@@ -31,6 +31,7 @@ class Post extends Component {
 
             id: this.props.post.user_id._id,
             post_id: this.props.post._id,
+            currentUser: {},
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             }
@@ -80,11 +81,13 @@ class Post extends Component {
     componentDidMount() {
         axios.get('http://localhost:3000/logincheck', this.state.config)
             .then((response) => {
+                
                 this.setState({
                     user: response.data,
-                    id: response.data._id
+                    id: response.data._id,
+                    currentUser: response.data
                 })
-
+                console.log(this.state.currentUser)
             })
         axios.get('http://localhost:3000/getcommentbypostid/' + this.props.post._id, this.state.config)
             .then(res => {
@@ -228,6 +231,12 @@ class Post extends Component {
                         <a className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                         <div className="post-date"> {date.format(now, 'YYYY/MM/DD')}  </div>
                         <div className="btnsapply">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
+=======
+>>>>>>> Stashed changes
                             <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={() => this.apply} data-target="#myModal" data-toggle="modal">Apply</button>
                             <div id="myModal" class="modal fade" role="dialog">
                                 <div className="modal-dialog">
@@ -245,6 +254,79 @@ class Post extends Component {
                                                                 <input className="form-control " id="citizenshipnumber" type="text"
                                                                     name="citizenshipnumber" placeholder="CitizenShip Number" value={this.state.citizenshipnumber} onChange={this.handleChange} />
                                                             </div>
+<<<<<<< Updated upstream
+
+                                                            <div className="col-xs-6 form-group">
+                                                                <input className="form-control" id="phone" type="text"
+                                                                    name="phone" placeholder="Phone" value={this.state.phone} onChange={this.handleChange} />
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div className="form-group">
+                                                            <input className="form-control" id="address" type="text"
+                                                                name="address" placeholder=" Temporary Address" value={this.state.address} onChange={this.handleChange} />
+                                                        </div>
+                                                        <div class="education">
+                                                            <h5>EDUCATION</h5>
+                                                            <div className="form-group">
+                                                                <input className="form-control" id="university" type="text"
+                                                                    name="university" placeholder="University" value={this.state.university} onChange={this.handleChange} />
+                                                            </div>
+
+                                                            <div className="form-group">
+                                                                <input className="form-control" id="studylevel" type="text"
+                                                                    name="studylevel" placeholder="Study Level" value={this.state.studylevel} onChange={this.handleChange} />
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <label id="label">Finished Year</label>
+                                                                <input className="form-control" id="year" type="date"
+                                                                    name="year" placeholder="Year" value={this.state.year} onChange={this.handleChange} />
+                                                            </div>
+                                                        </div>
+                                                        <div class="education">
+                                                            <h5>Experience</h5>
+                                                            <div className="form-group">
+                                                                <input className="form-control" id="workplace" type="text"
+                                                                    name="workplace" placeholder="Work Place" value={this.state.workplace} onChange={this.handleChange} />
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <textarea className="form-control" id="descp" type="text"
+                                                                    name="descp" placeholder="Description" value={this.state.descp} onChange={this.handleChange} />
+                                                            </div>
+                                                            <div class="row">
+                                                                <div className="col-xs-6 form-group">
+                                                                    <label id="label">From</label>
+                                                                    <input className="form-control " id="start" type="date"
+                                                                        name="start" placeholder="Year" value={this.state.start} onChange={this.handleChange} />
+                                                                </div>
+
+                                                                <div className="col-xs-6 form-group">
+                                                                    <label id="label">To</label>
+                                                                    <input className="form-control" id="end" type="date"
+                                                                        name="end" placeholder="Year" value={this.state.end} onChange={this.handleChange} />
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="box-footer">
+                                                        <div className="postdata">
+                                                            <button type="submit" onClick={this.apply} className="btn btn-primary" >Send</button>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+=======
+>>>>>>> Stashed changes
 
                                                             <div className="col-xs-6 form-group">
                                                                 <input className="form-control" id="phone" type="text"
@@ -316,9 +398,9 @@ class Post extends Component {
                             </div>
 
 
+>>>>>>> 3a49823182d904ea786f14d1672510f566ab5709
                             <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
                         </div>
-
                         <br />
 
                     </div>

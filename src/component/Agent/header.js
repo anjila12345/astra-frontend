@@ -55,7 +55,7 @@ class Header extends React.Component {
 
 
                                 <a href="agentprofile" id="profile">
-                                    <div className="title"><i className="	fa fa-user"></i>Profile</div></a>
+                                    <div className="title" id="profileNav"><i className="	fa fa-user"></i>Profile</div></a>
 
                                 <a href="postjob" id="post">
                                     <div className="title"><i className="	fa fa-plus"></i>Post

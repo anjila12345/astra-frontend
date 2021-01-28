@@ -100,7 +100,7 @@ class jobpost extends React.Component {
 
                                                 <div className="form-group">
                                                     <textarea className="form-control" ref="description"
-                                                        name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange}></textarea>
+                                                        name="description" id="descriptiond" placeholder="Description" value={this.state.description} onChange={this.handleChange}></textarea>
                                                 </div>
 
 

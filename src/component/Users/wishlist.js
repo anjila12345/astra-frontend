@@ -37,8 +37,6 @@ class wishlist extends Component {
             .then((res) => {
                 console.log(res.data)
                 this.setState({ post: res.data })
-
-
             })
     }
 
@@ -65,10 +63,6 @@ class wishlist extends Component {
                 console.log(error.response.data.errmsg)
             })
     }
-
-
-
-
     render() {
         //post design foreach loop
         const photoblog = this.state.post.map((post) => {
@@ -120,19 +114,11 @@ class wishlist extends Component {
                             </div>
                         </div>
                     </section>
-
-
-
                 </div>
 
             </div >
 
         )
     }
-
-
-
-
-
 }
 export default wishlist;
