@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import Header from '../../component/Admin/header';
-import Footer from '../../component/footer';
+import Footer from '../../component/footer2';
 import PostDetail from '../../component/Admin/Postdetails2';
 import axios from 'axios'
 
