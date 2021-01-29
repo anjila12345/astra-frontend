@@ -31,7 +31,6 @@ class Post extends Component {
 
             id: this.props.post.user_id._id,
             post_id: this.props.post._id,
-            currentUser: {},
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             }
@@ -81,13 +80,11 @@ class Post extends Component {
     componentDidMount() {
         axios.get('http://localhost:3000/logincheck', this.state.config)
             .then((response) => {
-                
                 this.setState({
                     user: response.data,
-                    id: response.data._id,
-                    currentUser: response.data
+                    id: response.data._id
                 })
-                console.log(this.state.currentUser)
+
             })
         axios.get('http://localhost:3000/getcommentbypostid/' + this.props.post._id, this.state.config)
             .then(res => {
@@ -213,7 +210,7 @@ class Post extends Component {
                             <a href="" ><strong >{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                             <p>{post.comment}<br />
                                 <div className="comment-date"> {date.format(now, 'YYYY/MM/DD')}  |
-                              <i className="fa fa-trash" onClick={() => this.handledelete(post._id)} ></i></div>
+                              <i className="fa fa-trash" id="delete" onClick={() => this.handledelete(post._id)} ></i></div>
                             </p>
                         </div>
                     </div>
@@ -231,13 +228,7 @@ class Post extends Component {
                         <a className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                         <div className="post-date"> {date.format(now, 'YYYY/MM/DD')}  </div>
                         <div className="btnsapply">
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Apply</button>
-=======
->>>>>>> Stashed changes
-                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={() => this.apply} data-target="#myModal" data-toggle="modal">Apply</button>
+                            <button type="button" className="btn-primary apply" id="apply" style={{ marginTop: 15 }} onClick={() => this.apply} data-target="#myModal" data-toggle="modal">Apply</button>
                             <div id="myModal" class="modal fade" role="dialog">
                                 <div className="modal-dialog">
                                     <div className="modal-content">
@@ -254,7 +245,6 @@ class Post extends Component {
                                                                 <input className="form-control " id="citizenshipnumber" type="text"
                                                                     name="citizenshipnumber" placeholder="CitizenShip Number" value={this.state.citizenshipnumber} onChange={this.handleChange} />
                                                             </div>
-<<<<<<< Updated upstream
 
                                                             <div className="col-xs-6 form-group">
                                                                 <input className="form-control" id="phone" type="text"
@@ -312,79 +302,7 @@ class Post extends Component {
                                                     </div>
                                                     <div className="box-footer">
                                                         <div className="postdata">
-                                                            <button type="submit" onClick={this.apply} className="btn btn-primary" >Send</button>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-=======
->>>>>>> Stashed changes
-
-                                                            <div className="col-xs-6 form-group">
-                                                                <input className="form-control" id="phone" type="text"
-                                                                    name="phone" placeholder="Phone" value={this.state.phone} onChange={this.handleChange} />
-                                                            </div>
-
-                                                        </div>
-
-                                                        <div className="form-group">
-                                                            <input className="form-control" id="address" type="text"
-                                                                name="address" placeholder=" Temporary Address" value={this.state.address} onChange={this.handleChange} />
-                                                        </div>
-                                                        <div class="education">
-                                                            <h5>EDUCATION</h5>
-                                                            <div className="form-group">
-                                                                <input className="form-control" id="university" type="text"
-                                                                    name="university" placeholder="University" value={this.state.university} onChange={this.handleChange} />
-                                                            </div>
-
-                                                            <div className="form-group">
-                                                                <input className="form-control" id="studylevel" type="text"
-                                                                    name="studylevel" placeholder="Study Level" value={this.state.studylevel} onChange={this.handleChange} />
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <label id="label">Finished Year</label>
-                                                                <input className="form-control" id="year" type="date"
-                                                                    name="year" placeholder="Year" value={this.state.year} onChange={this.handleChange} />
-                                                            </div>
-                                                        </div>
-                                                        <div class="education">
-                                                            <h5>Experience</h5>
-                                                            <div className="form-group">
-                                                                <input className="form-control" id="workplace" type="text"
-                                                                    name="workplace" placeholder="Work Place" value={this.state.workplace} onChange={this.handleChange} />
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <textarea className="form-control" id="descp" type="text"
-                                                                    name="descp" placeholder="Description" value={this.state.descp} onChange={this.handleChange} />
-                                                            </div>
-                                                            <div class="row">
-                                                                <div className="col-xs-6 form-group">
-                                                                    <label id="label">From</label>
-                                                                    <input className="form-control " id="start" type="date"
-                                                                        name="start" placeholder="Year" value={this.state.start} onChange={this.handleChange} />
-                                                                </div>
-
-                                                                <div className="col-xs-6 form-group">
-                                                                    <label id="label">To</label>
-                                                                    <input className="form-control" id="end" type="date"
-                                                                        name="end" placeholder="Year" value={this.state.end} onChange={this.handleChange} />
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="box-footer">
-                                                        <div className="postdata">
-                                                            <button type="submit" onClick={this.apply} className="btn btn-primary" >Send</button>
+                                                            <button type="submit" id="send"onClick={this.apply} className="btn btn-primary" >Send</button>
                                                         </div>
 
                                                     </div>
@@ -398,30 +316,35 @@ class Post extends Component {
                             </div>
 
 
->>>>>>> 3a49823182d904ea786f14d1672510f566ab5709
-                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
+                            <button type="button" className="btn-primary apply" id="wishlist" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
                         </div>
+
                         <br />
 
                     </div>
                     <div className=" commentname3">
                         <p><strong>{this.props.post.title}</strong></p>
                         <p>{this.props.post.description}</p>
+                        <p><strong>Experience:</strong> {this.props.post.experience}</p>
+                        <p><strong>Education Level:</strong> {this.props.post.education}</p>
+                        <p><strong>Salary:</strong> {this.props.post.salary}</p>
                     </div>
 
                     <div className="row">
-                        {this.props.post.favourite.length == 0
-                            ? <h3></h3>
-                            : <h3>{this.props.post.favourite.length}</h3>}
+                        <div class="starrating">
+                            {this.props.post.favourite.length == 0
+                                ? <h3></h3>
+                                : <h3>{this.props.post.favourite.length}</h3>}
+                        </div>
                         <div className=" rating">
                             {this.props.post.favourite.includes(this.state.id)
-                                ? <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-star fa-2x" style={{ color: "#C8D80D" }} ></i></strong></button>
-                                : <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.AddTofaviourite}><strong>  <i className="fa fa-star-o fa-2x" style={{ color: "#C8D80D" }}></i></strong></button>
+                                ? <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.DeleteTofaviourite}><strong>  <i className="fa fa-star fa-3x" style={{ color: "#C8D80D" }} ></i></strong></button>
+                                : <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.AddTofaviourite}><strong>  <i className="fa fa-star-o fa-3x" style={{ color: "#C8D80D" }}></i></strong></button>
                             }
                         </div>
                         <div className=" inputcomment">
                             <input id="textbox1" type="text" placeholder="Add comment..." name="comment" onChange={this.handleChange} />
-                            <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.postcomment}><strong>Post</strong></button>
+                            <button type="button" className="btn-comment" id="comment" style={{ marginTop: 15 }} onClick={this.postcomment}><strong>Post</strong></button>
                         </div>
                     </div>
                     {commentbox}
