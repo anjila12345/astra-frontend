@@ -2,7 +2,7 @@ import React from 'react'
 import UserDetail from '../../component/Admin/userdetails'
 import axios from 'axios';
 import Header from '../../component/Admin/header';
-import Footer from '../../component/footer';
+import Footer from '../../component/footer2';
 import AdminNavi from '../../component/Admin/AdminNavi'
 class UserDetails extends React.Component {
     state = {

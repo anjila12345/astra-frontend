@@ -20,7 +20,20 @@ describe('Aheader component tests', () => {
     expect(wrapper.find('#profile').text()).toBe("Profile");
   })
 
-  
+  test('should have a href component and href component should be named home', () => {
+
+    //There should be only one button
+    expect(wrapper.find('href'));
+    //Button should have matching text
+    expect(wrapper.find('#editprofile').text());
+  })
+  test('should have a href component and href component should be named home', () => {
+
+    //There should be only one button
+    expect(wrapper.find('href'));
+    //Button should have matching text
+    expect(wrapper.find('#wishlist').text()).toBe("Wishlist");
+  })
   test('should have a href component and href component should be named logout', () => {
 
     //There should be only one button

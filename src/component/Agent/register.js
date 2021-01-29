@@ -59,7 +59,7 @@ class Signuppage extends React.Component {
                     <div className="register-box-body">
 
                         <form>
-                            <p className="login-box-msg"> <b>Register Here </b></p>
+                            <h2 className="login-box-msg"> <b>Register Here </b></h2>
                             <div className="form-group has-feedback">
                                 <input className="form-control input" type="text" id="firstname" value={this.state.firstname} onChange={(event) =>
                                     this.setState({ firstname: event.target.value })} placeholder="First name" required />

@@ -16,6 +16,10 @@ class Mypostpage extends React.Component {
             user: {},
             description: '',
             title: '',
+            experience: '',
+            education: '',
+
+            salary: '',
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             }
@@ -53,6 +57,9 @@ class Mypostpage extends React.Component {
                 singleFeed: response.data,
                 description: response.data.singleFeed.description,
                 title: response.data.singleFeed.title,
+                experience: response.data.singleFeed.experience,
+                education: response.data.singleFeed.education,
+                salary: response.data.singleFeed.salary,
                 id: response.data.singleFeed._id,
             });
 
@@ -70,7 +77,10 @@ class Mypostpage extends React.Component {
         // alert(this.state.id)
         const data = {
             title: this.state.title,
-            description: this.state.description
+            description: this.state.description,
+            experience: this.state.experience,
+            salary: this.state.salary,
+            education: this.state.education,
         }
         console.log(this.state.singleFeed.text);
         axios.put("http://localhost:3000/blogupdate/" + this.state.id, data).then(
@@ -111,16 +121,28 @@ class Mypostpage extends React.Component {
                                                 <div className="modal-header">
                                                     <form >
                                                         <div className="form-group">
-                                                            <input className="form-control" type="text" name='title' placeholder="Blog Title" value={this.state.title} onChange={(event) => this.setState({ title: event.target.value })} />
+                                                            <input className="form-control" id="title" type="text" name='title' placeholder="Blog Title" value={this.state.title} onChange={(event) => this.setState({ title: event.target.value })} />
 
                                                         </div>
                                                         <div className="form-group">
-                                                            <textarea className="form-control" type="text" name='description' placeholder="Description" value={this.state.description} onChange={(event) => this.setState({ description: event.target.value })} /><br />
+                                                            <textarea className="form-control" id="descriptiond" type="text" name='description' placeholder="Description" value={this.state.description} onChange={(event) => this.setState({ description: event.target.value })} /><br />
+
+                                                        </div>
+                                                        <div className="form-group">
+                                                            <input className="form-control" id="experience" type="text" name='experience' placeholder="Experience" value={this.state.experience} onChange={(event) => this.setState({ experience: event.target.value })} />
+
+                                                        </div>
+                                                        <div className="form-group">
+                                                            <input className="form-control" id="education" type="text" name='education' placeholder="Education level" value={this.state.education} onChange={(event) => this.setState({ education: event.target.value })} />
+
+                                                        </div>
+                                                        <div className="form-group">
+                                                            <input className="form-control" id="salary" type="text" name='salary' placeholder="Salary" value={this.state.salary} onChange={(event) => this.setState({ salary: event.target.value })} />
 
                                                         </div>
                                                     </form>
                                                     <div className="btn-footer">
-                                                        <button type="button" className="btn btn-primary" onClick={this.UpdateData}>Update</button>
+                                                        <button type="button" className="btn btn-primary" id="update" onClick={this.UpdateData}>Update</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -128,7 +150,10 @@ class Mypostpage extends React.Component {
                                     </div>
                                 </div>
                                 <div className="pull-right">
-                                    <i className="fa fa-trash" onClick={() => this.handledelete(post._id)} ></i>
+                                    <i className="fa fa-trash" id="delete" onClick={() => this.handledelete(post._id)} ></i>
+                                </div>
+                                <div className="pull-left">
+                                    <a href="applicants" id="applicants"> <i className="fa fa-list"  ></i></a>
                                 </div>
                             </div>
 
@@ -138,6 +163,9 @@ class Mypostpage extends React.Component {
                         <div className=" commentname3">
                             <p><strong>{post.title}</strong></p>
                             <p>{post.description}</p>
+                            <p><strong>Experience:</strong> {post.experience}</p>
+                            <p><strong>Education Level:</strong> {post.education}</p>
+                            <p><strong>Salary:</strong> {post.salary}</p>
                         </div>
 
 

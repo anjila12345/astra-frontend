@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom';
-import Newsfeedpage from '../../component/Users/Newsfeed';
-import Header from '../../component/Users/header';
+import Header from '../../component/Admin/header';
 import Footer from '../../component/footer2';
+import PostDetail from '../../component/Admin/Postdetails2';
 import axios from 'axios'
-class Newsfeed extends React.Component {
+
+
+
+class PostDetails extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,7 +17,7 @@ class Newsfeed extends React.Component {
             user: {},
             id: "",
             posts: [],
-
+            comment: "",
             config: {
                 headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
             }
@@ -33,7 +36,7 @@ class Newsfeed extends React.Component {
         axios.get("http://localhost:3000/findallpost").then(res => {
             this.setState({ posts: res.data });
         })
-        // console.log(this.state.posts)
+        console.log(this.state.posts)
     }
 
     render() {
@@ -43,8 +46,12 @@ class Newsfeed extends React.Component {
         return (
             <div>
                 <Header />
-                <Newsfeedpage post={this.state.posts} user={this.state.user} />
+                <PostDetail post={this.state.posts} user={this.state.user} />
                 <Footer />
+
+
+
+
             </div>
 
         )
@@ -52,4 +59,4 @@ class Newsfeed extends React.Component {
 
 
 }
-export default Newsfeed
+export default PostDetails

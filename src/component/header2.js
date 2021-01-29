@@ -57,16 +57,16 @@ class Header extends React.Component {
 
                         <nav class="nav-menu d-none d-lg-block">
                             <ul>
-                                <li class="active"><a href="/">Home</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#services">Services</a></li>
-                                <li><a href="#team">Team</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                                <li class="drop-down"><a href="">Signin<i class="fa fa-angle-down"></i></a>
+                                <li class="active"><a href="/" id="home">Home</a></li>
+                                <li><a href="#about" id="about">About</a></li>
+                                <li><a href="#services" id="services">Services</a></li>
+                                <li><a href="#team" id="team">Team</a></li>
+                                <li><a href="#contact" id="contact">Contact</a></li>
+                                <li class="drop-down"><a href=""><i class="fa fa-user"></i>Member<i class="fa fa-angle-down"></i></a>
                                     <ul>
-                                        <li><a href="signin">Login</a></li>
+                                        <li><a href="signin" id="login">Login</a></li>
 
-                                        <li><a href="signup">Register</a></li>
+                                        <li><a href="signup" id="signup">Register</a></li>
                                     </ul>
                                 </li>
 

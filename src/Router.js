@@ -10,6 +10,7 @@ import Signup from './container/signup'
 import userdash from './container/userdashboard'
 import Editprofile from '././container/Users/editprofile'
 import Newsfeed from '././container/Users/Newsfeed'
+import Wishlist from '././container/Users/wishlist'
 
 // Agent
 import Login from './container/Agent/login'
@@ -19,13 +20,21 @@ import Login2 from './component/login2'
 import Agentprofile from './container/Agent/editprofile'
 import Postjob from './container/Agent/addjob'
 import Mypost from './container/Agent/mypost'
+import Applicants from './container/Agent/applicant'
+
+
+import Profile from './component/Profile'
+import ApplyPost from './component/Users/ApplyPost';
 
 
 //admin
 import Dashboard from './component/Admin/adminDashboard';
 import Userdetails from './container/Admin/userdetails';
 import Agentdetails from './container/Admin/agentdetail';
-import Adminprofile from './container/Admin/editprofile'
+import Adminprofile from './container/Admin/editprofile';
+import Postdetails from './container/Admin/postdetails';
+import Admin from './container/Admin/createAdmin';
+
 class Router extends Component {
     render() {
         return (
@@ -44,13 +53,19 @@ class Router extends Component {
                     <Route exact path="/postjob" component={Postjob} />
                     <Route exact path="/mypost" component={Mypost} />
                     <Route exact path="/Newsfeed" component={Newsfeed} />
-
+                    <Route exact path="/wishlist" component={Wishlist} />
                     <Route exact path="/adminDashboard" component={Dashboard} />
 
                     <Route exact path="/userdetails" component={Userdetails} />
                     <Route exact path="/agentdetails" component={Agentdetails} />
                     <Route exact path="/adminprofile" component={Adminprofile} />
+                    <Route exact path="/applicants" component={Applicants} />
+                    <Route exact path="/addadmin" component={Admin} />
+                    <Route exact path="/PostDetails" component={Postdetails} />
 
+                    <Route exact path="/profile" component={Profile} />
+
+                    <Route exact path="/userjobpost" component={ApplyPost} />
                 </Switch>
             </BrowserRouter>
         )

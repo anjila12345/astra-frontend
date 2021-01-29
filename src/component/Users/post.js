@@ -210,7 +210,7 @@ class Post extends Component {
                             <a href="" ><strong >{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                             <p>{post.comment}<br />
                                 <div className="comment-date"> {date.format(now, 'YYYY/MM/DD')}  |
-                              <i className="fa fa-trash" onClick={() => this.handledelete(post._id)} ></i></div>
+                              <i className="fa fa-trash" id="delete" onClick={() => this.handledelete(post._id)} ></i></div>
                             </p>
                         </div>
                     </div>
@@ -228,7 +228,7 @@ class Post extends Component {
                         <a className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
                         <div className="post-date"> {date.format(now, 'YYYY/MM/DD')}  </div>
                         <div className="btnsapply">
-                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={() => this.apply} data-target="#myModal" data-toggle="modal">Apply</button>
+                            <button type="button" className="btn-primary apply" id="apply" style={{ marginTop: 15 }} onClick={() => this.apply} data-target="#myModal" data-toggle="modal">Apply</button>
                             <div id="myModal" class="modal fade" role="dialog">
                                 <div className="modal-dialog">
                                     <div className="modal-content">
@@ -302,7 +302,7 @@ class Post extends Component {
                                                     </div>
                                                     <div className="box-footer">
                                                         <div className="postdata">
-                                                            <button type="submit" onClick={this.apply} className="btn btn-primary" >Send</button>
+                                                            <button type="submit" id="send"onClick={this.apply} className="btn btn-primary" >Send</button>
                                                         </div>
 
                                                     </div>
@@ -316,7 +316,7 @@ class Post extends Component {
                             </div>
 
 
-                            <button type="button" className="btn-primary apply" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
+                            <button type="button" className="btn-primary apply" id="wishlist" style={{ marginTop: 15 }} onClick={this.addtowishlist}>Wishlist</button>
                         </div>
 
                         <br />
@@ -344,7 +344,7 @@ class Post extends Component {
                         </div>
                         <div className=" inputcomment">
                             <input id="textbox1" type="text" placeholder="Add comment..." name="comment" onChange={this.handleChange} />
-                            <button type="button" className="btn-comment" style={{ marginTop: 15 }} onClick={this.postcomment}><strong>Post</strong></button>
+                            <button type="button" className="btn-comment" id="comment" style={{ marginTop: 15 }} onClick={this.postcomment}><strong>Post</strong></button>
                         </div>
                     </div>
                     {commentbox}

@@ -1,19 +1,19 @@
 import React from 'react'
-import Editprofilepage from '../../component/Admin/editprofile';
-import Header from '../../component/Admin/header';
+import Wishlist from '../../component/Users/wishlist';
+import Header from '../../component/Users/header';
 import Footer from '../../component/footer2';
 
 
 
 
 
-class Editprofile extends React.Component {
+class wish extends React.Component {
 
     render() {
         return (
             <div>
                 <Header />
-                <Editprofilepage />
+                <Wishlist />
                 <Footer />
 
             </div>
@@ -23,4 +23,4 @@ class Editprofile extends React.Component {
 
 
 }
-export default Editprofile
+export default wish
