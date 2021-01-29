@@ -99,13 +99,13 @@ class Signuppage extends React.Component {
         }
 
 
-        }
-    
-
- 
+    }
 
 
-    
+
+
+
+
 
     handleRedirect() {
         if (this.state.redirect) {
@@ -195,7 +195,7 @@ class Signuppage extends React.Component {
 
                         </div>
 
-                <AdminNavi/>
+
 
 
                     </div>
