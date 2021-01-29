@@ -346,11 +346,24 @@ ul {
     padding-bottom: 15px;
     padding-left: 300px;
 }
+.content-wrapper {
+  min-height:calc(100vh - 80px - 72px);
+  background-color: #F2F3F5;
+  z-index: 800;   
+  padding-bottom: 15px;
+
+}
 .content-header {
     position: relative;
     padding: 15px 15px 0 15px;
     min-height: calc(100vh - 80px - 72px);
 }
+.content-header1 {
+  position: relative;
+  padding:15px 15px 0 15px;
+  min-height: calc(100vh - 80px - 72px);
+}
+
 
 .btnhome1{
     background-color: #fff;
@@ -428,6 +441,16 @@ ul {
     margin-left: 30px;
     margin-top:20px;
 }
+.commentname2{
+ 
+  margin-left: 14px;
+    background: #fff; 
+    margin-right: 14px;  
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  border-bottom: 1px solid #eee;
+}
+
 
 /* profile */
 .title-post{
@@ -478,7 +501,7 @@ ul {
 }
 /* comment */
 .inputcomment {
-    margin-left: 20px;
+    margin-left: 10px;
     width: 500px;
     background-color: #eee;
     border-radius: 40px;
@@ -503,15 +526,16 @@ ul {
 }
 .commentname {
     margin-top: 7px;
-    margin-left: 10px;
+    margin-left: 17px;
     display: inline-flex;
 }
 .comment-text {
-    margin-left: 15px;
+    margin-left: 23px;
     background: #fff;
     border-radius: 10px;
-    width: 250px;
+    width: 500px;
     padding: 10px;
+    background: #eee;
 }
 .comment-date {
     color: rgba(0, 0, 0, 0.54);
@@ -522,7 +546,7 @@ ul {
 }
 .btnsapply{
     
-    padding-left: 400px;
+    padding-left:370px;
     margin-top: -50px;
     margin-left: 15px;
 }
@@ -538,16 +562,19 @@ ul {
 }
 /* Rating */
 .rating{
-  margin-left: 35px;
-  margin-top: 10px;
+  margin-left: 0px;
+  margin-top: 0px;
 }
-
+.starrating{
+  margin-left: 35px;
+  margin-top: 7px;
+}
 
 /* post update */
 .postbtns {
     display: inline-flex;
     font-size: 20px;
-    padding-left: 350px;
+    padding-left: 300px;
     padding-top: 10px;
 }
 .pull-left {
@@ -558,6 +585,7 @@ ul {
     border-radius: 50%;
     padding-left: 12px;
     padding-top: 5px;
+    margin-left: 15px;
 }
 .pull-right {
     padding-left: 13px;
@@ -671,11 +699,26 @@ ul {
   background-color: #fff;
 }
 .table #thead th{
-padding:10px
+padding:10px;
+background-color: rgb(34, 33, 33);
+border:1px solid #ddd;
+color:#fff
 }
-.table tbody tr{
-    padding:10px 
+.table tbody tr td{
+    padding:10px ;
+    border:1px solid #ddd
 }
+.table #trash{
+    padding-top:8px;
+    padding-left: 10px;
+     background:rgb(199, 84, 31);
+     color:#fff;
+     height: 40px;
+     width: 40px;
+     border-radius: 50%;     
+     font-size:25px 
+}
+
 /* hero */
 #hero {
     width: 100%;
@@ -866,3 +909,72 @@ padding:10px
     
     font-size: 10px;
   }
+  /* dashboard */
+  .admin-body{
+    display:inline-flex;
+    padding-left:40px
+}
+.admin-cont{
+  margin-right: 60px;
+  width:150px;
+  height:150px;
+  margin-bottom: 30px;
+  background: #eee;
+  padding-top: 15px;
+  text-align: center;
+  }
+  .admin-cont .fa-user{
+    background:#e60023;
+    height:60px;
+    width: 60px;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 30px;
+    color: #fff;
+}
+.admin-cont .fa-users{
+    background:rgb(141, 233, 141);
+    height:60px;
+    width: 60px;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 30px;
+    color: #fff;
+}
+.admin-cont .fa-envelope{
+    background:rgb(182, 113, 189);
+    height:60px;
+    width: 60px;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 30px;
+    color: #fff;
+}
+.admin-cont .fa-comment{
+    background:rgb(199, 84, 31);
+    height:60px;
+    width: 60px;
+    border-radius: 50%;
+    padding: 12px;
+    font-size: 30px;
+    color: #fff;
+}
+.admintitle{
+  padding-top:10px;
+  
+  color:black;
+  text-align: center;
+   
+}
+.box-header1.with-border {
+  border-bottom: 1px solid #f4f4f4;
+  padding: 30px;
+  background: #222d32;
+  color: #fff;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+.errormsg{
+  color:red
+}
