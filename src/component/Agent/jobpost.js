@@ -9,7 +9,10 @@ class jobpost extends React.Component {
         this.state = {
             id: "",
             description: "",
+            experience: '',
+            education: '',
 
+            salary: '',
             title: "",
             success: "",
             error: "",
@@ -47,6 +50,9 @@ class jobpost extends React.Component {
         postdata.append('user_id', this.state.id);
         postdata.append('description', this.state.description);
         postdata.append('title', this.state.title);
+        postdata.append('experience', this.state.experience);
+        postdata.append('education', this.state.education);
+        postdata.append('salary', this.state.salary);
         axios.post('http://localhost:3000/createpost', postdata, this.state.config)
             .then(response => {
                 console.log(response.data.successmsg)
@@ -103,6 +109,23 @@ class jobpost extends React.Component {
                                                         name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange}></textarea>
                                                 </div>
 
+
+                                                <div className="form-group">
+                                                    <input className="form-control" id="experience" ref="text"
+                                                        name="experience" placeholder="Job title" value={this.state.experience} onChange={this.handleChange} />
+                                                </div>
+
+
+                                                <div className="form-group">
+                                                    <input className="form-control" id="education" ref="text"
+                                                        name="education" placeholder="Education Level" value={this.state.education} onChange={this.handleChange} />
+                                                </div>
+
+
+                                                <div className="form-group">
+                                                    <input className="form-control" id="salary" ref="text"
+                                                        name="salary" placeholder="Salary" value={this.state.salary} onChange={this.handleChange} />
+                                                </div>
 
 
                                             </div>
