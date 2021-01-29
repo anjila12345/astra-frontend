@@ -100,7 +100,7 @@ class jobpost extends React.Component {
 
                                                 <div className="form-group">
                                                     <textarea className="form-control" ref="description"
-                                                        name="description" placeholder="Description" value={this.state.description} onChange={this.handleChange} id="desc"></textarea>
+                                                        name="description" id="descriptiond" placeholder="Description" value={this.state.description} onChange={this.handleChange}></textarea>
                                                 </div>
 
 
@@ -110,7 +110,7 @@ class jobpost extends React.Component {
                                                 <div className="postdata">
                                                     <button type="submit" onClick={this.postdata} className="btn btn-primary" id="insert">Submit</button>
                                                 </div>
-                                                <a href="#" id="clear" className="btn btn-primary">Clear</a>
+                                                <a href="#" className="btn btn-primary" id="clear">Clear</a>
                                             </div>
 
                                         </div>

@@ -1,19 +1,19 @@
 import React from 'react'
-import Loginpage from '../../component/Agent/login';
-import Header from '../../component/header';
+import Wishlist from '../../component/Users/wishlist';
+import Header from '../../component/Users/header';
 import Footer from '../../component/footer2';
 
 
 
 
-class Login extends React.Component {
+
+class wish extends React.Component {
 
     render() {
-
         return (
             <div>
                 <Header />
-                <Loginpage />
+                <Wishlist />
                 <Footer />
 
             </div>
@@ -23,4 +23,4 @@ class Login extends React.Component {
 
 
 }
-export default Login
+export default wish

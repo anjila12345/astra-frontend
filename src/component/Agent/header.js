@@ -52,11 +52,10 @@ class Header extends React.Component {
 
                         <div className="navbar-custom-menu">
                             <div className="navbar-custom">
-                                <a href="Newsfeed" id="home">
-                                    <div className="title"><i className="fa fa-home"></i>Home</div></a>
+
 
                                 <a href="agentprofile" id="profile">
-                                    <div className="title"><i className="	fa fa-user"></i>Profile</div></a>
+                                    <div className="title" id="profileNav"><i className="	fa fa-user"></i>Profile</div></a>
 
                                 <a href="postjob" id="post">
                                     <div className="title"><i className="	fa fa-plus"></i>Post
@@ -66,8 +65,9 @@ class Header extends React.Component {
                                     <div className="title"><i className="	fa fa-newspaper-o"></i>Mypost
                 </div></a>
 
-                                <a href="agentprofile" id="title">
+                                <a href="agentprofile" id="agentprofile">
                                     <div className="title">
+                                        <img src={"http://localhost:3000/image/" + this.state.user.image} id="userimg" className="img-circle" alt="avatar" />
 
                                         {this.state.user.firstname}
                                     </div></a>

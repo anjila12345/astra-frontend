@@ -1,7 +1,7 @@
 import React from 'react'
-import Editprofilepage from '../../component/Agent/editprofile';
-import Header from '../../component/Agent/header';
+import Header from '../../component/Admin/header';
 import Footer from '../../component/footer2';
+import CreateAdmin from  '../../component/Admin/createAdmin'
 
 
 
@@ -13,7 +13,7 @@ class Editprofile extends React.Component {
         return (
             <div>
                 <Header />
-                <Editprofilepage />
+                <CreateAdmin />
                 <Footer />
 
             </div>

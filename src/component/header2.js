@@ -47,30 +47,34 @@ class Header extends React.Component {
 
         return (
             <div>
-                <header class="main-header">
+                <header id="header" class="fixed-top">
+                    <div class="container d-flex">
 
-                    <a href="/" class="logo  ">
-                        <span class="logo-lg"><h1><b>Astra</b><b>Securities</b></h1></span>
-                    </a>
+                        <div class="logo mr-auto">
+                            <h1 class="text-light"><a href="/">AstraSecurities</a></h1>
 
-
-                    <nav class="navbar navbar-static-top">
-
-                        <div class="navbar-custom-menu">
-                            <ul class="nav navbar-nav">
-                                <li>
-                                    <a href="signin"><i class="fa fa-lock"></i>Login
-
-                                    </a>
-
-                                </li>
-                                <li>
-                                    <a href="signup"><i class="fa fa-user"></i>Register
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
-                    </nav>
+
+                        <nav class="nav-menu d-none d-lg-block">
+                            <ul>
+                                <li class="active"><a href="/" id="home">Home</a></li>
+                                <li><a href="#about" id="about">About</a></li>
+                                <li><a href="#services" id="services">Services</a></li>
+                                <li><a href="#team" id="team">Team</a></li>
+                                <li><a href="#contact" id="contact">Contact</a></li>
+                                <li class="drop-down"><a href=""><i class="fa fa-user"></i>Member<i class="fa fa-angle-down"></i></a>
+                                    <ul>
+                                        <li><a href="signin" id="login">Login</a></li>
+
+                                        <li><a href="signup" id="signup">Register</a></li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+
+                    </div>
                 </header>
             </div>
         )

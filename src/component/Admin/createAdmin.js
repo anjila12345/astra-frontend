@@ -14,6 +14,7 @@ class Signuppage extends React.Component {
             'password': '',
             'role': '',
             redirect: false,
+
             fnameerror: '',
             lnameerror: '',
             roleerror: '',
@@ -98,11 +99,19 @@ class Signuppage extends React.Component {
         }
 
 
-    }
+        }
+    
+
+ 
+
+
+    
 
     handleRedirect() {
         if (this.state.redirect) {
+
             return <Redirect to='/addadmin' />
+
         }
     }
 
@@ -111,6 +120,7 @@ class Signuppage extends React.Component {
         return (
             <div>
                 {this.handleRedirect()}
+
                 <AdminNavi />
                 <div className="content-wrapper1">
                     <div className="register-box">
@@ -184,6 +194,9 @@ class Signuppage extends React.Component {
                             </form>
 
                         </div>
+
+                <AdminNavi/>
+
 
                     </div>
 

@@ -87,11 +87,12 @@ class Editprofilepage extends React.Component {
                             <div className="row">
 
                                 <div className="col-md-9 bg-white padding-2">
-                                    <div className="title-post">
-                                        <h1><i>Profile</i></h1>
-                                    </div>
+
                                     <div className="box box-primary">
                                         <div className="img-form">
+                                            <div className="title-post">
+                                                <h1><i>Profile</i></h1>
+                                            </div>
                                             <div className="img-row">
                                                 <img src={"http://localhost:3000/image/" + this.state.user.image} width="150px" height="150px" className="" alt="avatar" />
 
@@ -100,7 +101,7 @@ class Editprofilepage extends React.Component {
                                                     <h5 >{this.state.user.email}</h5>
                                                 </div>
                                                 <div className="form-group" id="updatebtn">
-                                                    <button type="button" type="submit" id="save" onClick={this.UpdateData} className="btn-update">Save</button>
+                                                    <button type="button" type="submit" onClick={this.UpdateData} id="save" className="btn-update">Save</button>
                                                 </div>
                                             </div>
                                             <input type="file" name="image" onChange={(e) => this.handleImageChange(e)}
@@ -143,7 +144,7 @@ class Editprofilepage extends React.Component {
                                                     <input type="text" className="form-control" id="password" placeholder="New Password" value={this.state.user.password} readonly />
                                                 </div>
                                                 <div className="form-group">
-                                                    <button type="button" type="submit" id="Submit" onClick={this.UpdateData} className="btn btn-flat btn-primary">Submit</button>
+                                                    <button type="button" type="submit" onClick={this.UpdateData} id="Submit" className="btn-update">Submit</button>
                                                 </div>
                                             </div>
 

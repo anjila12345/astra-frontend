@@ -15,7 +15,7 @@ describe('Login component tests', () => {
     //There should be only one button
     expect(wrapper.find('href'));
     //Button should have matching text
-    expect(wrapper.find('#registerh').text()).toBe("SignUp");
+    expect(wrapper.find('#registerh').text()).toBe("Register Now");
   })
   
   test("render the h2", () => {

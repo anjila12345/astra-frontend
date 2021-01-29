@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router';
 import Header from '../component/header';
-import Footer from '../component/footer';
+import Footer from '../component/footer2';
 class Register extends React.Component {
 
     handleRedirect() {
@@ -25,13 +25,13 @@ class Register extends React.Component {
                                 <h3 className="title1">Create an Account</h3>
                                 <div className="User">
 
-                                    <a href="register">
+                                    <a href="register" id="jobseeker">
                                         <img src={"img/jobseaker.jpg"} className="Agent" />
                                         <div className="title">Jobseeker</div></a>
 
 
 
-                                    <a href="agentregister">
+                                    <a href="agentregister" id="employer">
                                         <img src={"img/emp.png"} className="Agent" />
                                         <div className="title">Employer</div></a>
 

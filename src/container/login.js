@@ -2,7 +2,7 @@ import React from 'react'
 import Login from '../component/login';
 import Header from '../component/header';
 
-import Footer from '../component/footer';
+import Footer from '../component/footer2';
 
 
 class Loginpage extends React.Component {
