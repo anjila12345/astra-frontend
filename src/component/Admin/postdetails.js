@@ -26,10 +26,13 @@ class PostDetail extends React.Component {
                         <p>{this.props.post.title}</p>
                     </td>
                     <td> <p>{this.props.post.description}</p></td>
+                    <td> <p>{this.props.post.experience}</p></td>
+                    <td> <p>{this.props.post.education}</p></td>
+                    <td> <p>{this.props.post.salary}</p></td>
                     <td>
-                        <td>
-                            <button type="button" className="btn btn-primary" onClick={this.deletepost} onClick={() => this.handledelete(this.props.post._id)}> <i className="fa fa-trash" ></i> Delete </button>
-                        </td>  </td>
+
+                        <button type="button" id="delete" className="btn btn-primary" onClick={this.deletepost} onClick={() => this.handledelete(this.props.post._id)}> <i className="fa fa-trash" ></i> Delete </button>
+                    </td>
                 </tr>
 
             </tbody>

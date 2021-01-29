@@ -28,6 +28,9 @@ class PostDetail extends React.Component {
                                             <th>Last Name</th>
                                             <th>Title</th>
                                             <th>Discription</th>
+                                            <th>Experience</th>
+                                            <th>Education</th>
+                                            <th>Salary</th>
                                             <th>Action</th>
                                         </thead>
                                         {photoblog}
