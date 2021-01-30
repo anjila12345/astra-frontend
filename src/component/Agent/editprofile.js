@@ -112,7 +112,7 @@ class Editprofilepage extends React.Component {
                                         <form>
                                             <div className="box-body">
                                                 <div className="title-box">
-                                                    <h2>Account Information</h2>
+                                                    <h3>Account Information</h3>
                                                 </div>
                                                 <div class="row">
                                                     <div className="col-xs-6 form-group">
@@ -144,7 +144,7 @@ class Editprofilepage extends React.Component {
                                                     <input type="text" className="form-control" id="password" placeholder="New Password" value={this.state.user.password} readonly />
                                                 </div>
                                                 <div className="form-group">
-                                                    <button type="button" type="submit" onClick={this.UpdateData} className="btn-update">Submit</button>
+                                                    <button type="button" id="submitt" type="submit" onClick={this.UpdateData} className="btn-update">Submit</button>
                                                 </div>
                                             </div>
 
