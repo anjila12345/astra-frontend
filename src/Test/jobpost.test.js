@@ -21,6 +21,9 @@ describe('Login component tests', () => {
     //Email and password input field should be present
     expect(wrapper.find('input#title'));
     expect(wrapper.find('textarea#desc'));
+    expect(wrapper.find('input#education'));
+    expect(wrapper.find('input#experience'));
+    expect(wrapper.find('input#salary'));
   });
   test('should have a href component and href component should be named clear', () => {
 
@@ -35,6 +38,11 @@ describe('Login component tests', () => {
     //Optionally test to check if password and email are empty strings on 
     expect(wrapper.state('title')).toEqual('');
     expect(wrapper.state('desc'));
+    expect(wrapper.state('education')).toEqual('');
+    expect(wrapper.state('experience')).toEqual('');
+    expect(wrapper.state('salary')).toEqual('');
+
+
 });
 
 
