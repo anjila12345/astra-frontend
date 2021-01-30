@@ -19,29 +19,29 @@ export default class adminDashboard extends Component {
                                     </div>
                                     <div className="row">
                                         <div className="admin-body">
-                                            <a href="adminprofile">
+                                            <a href="adminprofile" id="adminprofile">
                                                 <div className="admin-cont">
                                                     <i className="fa fa-user"></i>
                                                     <div className="admintitle">
-                                                        <h4>Admin Profile </h4>
+                                                        <h4>Admin Profile</h4>
                                                     </div>
                                                 </div></a>
-                                            <a href="userdetails">
+                                            <a href="userdetails" id="users">
                                                 <div className="admin-cont">
                                                     <i className="fa fa-users"></i>
                                                     <div className="admintitle">
-                                                        <h4>Users </h4>
+                                                        <h4>Users</h4>
                                                     </div>
                                                 </div></a>
 
-                                            <a href="PostDetails">
+                                            <a href="PostDetails" id="posts">
                                                 <div className="admin-cont">
                                                     <i className="fa fa-envelope"></i>
                                                     <div className="admintitle">
                                                         <h4>Posts</h4>
                                                     </div>
                                                 </div></a>
-                                            <a href="agentdetails">
+                                            <a href="agentdetails" id="agentdetails">
                                                 <div className="admin-cont">
                                                     <i className="fa fa-users"></i>
                                                     <div className="admintitle">

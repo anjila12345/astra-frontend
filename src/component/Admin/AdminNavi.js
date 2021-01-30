@@ -62,15 +62,15 @@ class AdminNavi extends React.Component {
                         <h5>
                             <div className="menu">MENU</div></h5>
                         <ul className="nav nav-pills nav-stacked">
-                            <li><a href="AdminDashboard"><i className="fa fa-dashboard"></i> Dashboard</a></li>
-                            <li><a href="adminprofile"><i className="fa fa-user"></i> Admin Detail</a></li>
-                            <li><a href="userdetails"><i className="fa fa-users"></i> User Detail</a></li>
-                            <li><a href="agentdetails"><i className="fa fa-users"></i> Agent Detail</a></li>
-                            <li><a href="PostDetails"><i className="fa fa-envelope"></i> Post Detail</a></li>
+                            <li><a href="AdminDashboard" id="dashboard"><i className="fa fa-dashboard"></i>Dashboard</a></li>
+                            <li><a href="adminprofile" id="admindetail"><i className="fa fa-user"></i>Admin Detail</a></li>
+                            <li><a href="userdetails" id="userdetail"><i className="fa fa-users"></i>User Detail</a></li>
+                            <li><a href="agentdetails" id="agentdetail"><i className="fa fa-users"></i>Agent Detail</a></li>
+                            <li><a href="PostDetails" id="postdetail"><i className="fa fa-envelope"></i>Post Detail</a></li>
 
-                            <li><a href="addadmin"><i className="fa fa-user-plus"></i> Create Admin</a></li>
+                            <li><a href="addadmin" id="createadmin"><i className="fa fa-user-plus"></i>Create Admin</a></li>
 
-                            <li><a href="Login" onClick={this.LogOut}><i className="fa fa-arrow-circle-o-right"></i> Logout</a></li>
+                            <li><a href="Login" onClick={this.LogOut} id="logout"><i className="fa fa-arrow-circle-o-right"></i>Logout</a></li>
                         </ul>
                     </div>
                 </div >

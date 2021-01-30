@@ -103,12 +103,12 @@ class Apply extends React.Component {
 
                                                 <div className="form-group">
                                                     <textarea className="form-control" ref="description"
-                                                        name="phone" placeholder="Phone" value={this.state.phone} onChange={this.handleChange}></textarea>
+                                                        name="phone" placeholder="Phone" id="desc" value={this.state.phone} onChange={this.handleChange}></textarea>
                                                 </div>
 
                                                 <div className="form-group">
                                                     <textarea className="form-control" ref="description"
-                                                        name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange}></textarea>
+                                                        name="email" placeholder="Email" id="email" value={this.state.email} onChange={this.handleChange}></textarea>
                                                 </div>
 
                                                 <div className="form-group">
@@ -120,10 +120,10 @@ class Apply extends React.Component {
                                             </div>
                                             <div className="box-footer">
                                                 <div className="postdata">
-                                                    <button type="submit" onClick={this.postdata} className="btn btn-primary" >Submit</button>
+                                                    <button type="submit" id="submitt" onClick={this.postdata} className="btn btn-primary" >Submit</button>
                                                 </div>
                                                 {/* {this.fileData()} */}
-                                                <a href="#" className="btn btn-primary"> Clear</a>
+                                                <a href="#" id="clear" className="btn btn-primary"> Clear</a>
                                             </div>
 
                                         </div>
