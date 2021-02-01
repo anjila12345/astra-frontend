@@ -6,27 +6,19 @@ setDefaultTimeout(60 * 1000);
 
 let driver
 
-Given('I am in login page', async () => {
+Given('I am in different page', async () => {
     driver = await new Builder().forBrowser('chrome').build()
-    await driver.get('http://localhost:3001/login')
+    await driver.get('http://localhost:3001/postjob')
 })
 
-Given('I enter "test@test.com" as my email', async () => {
-    await driver.findElement(By.id('username')).sendKeys('user1')
+When('I click on the "profile" button', async () => {
+    await driver.findElement(By.id('profileNav')).click()
 })
 
-Given('I enter "test" as my password', async () => {
-    await driver.findElement(By.id('password')).sendKeys('password')
-})
-
-When('I click on the "sign in" button', async () => {
-    await driver.findElement(By.id('Signin')).click()
-})
-
-Then('I should be on the login success page', async () => {
+Then('I should be on the profile page', async () => {
     // driver.sleep(50000)
     // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    let pr = driver.wait(until.elementLocated(By.id('logout')), 5000)
+    driver.wait(until.elementLocated(By.id('imgedit')), 5000)
         .then(function(elm) {
             console.log(elm)
             return true
@@ -34,6 +26,7 @@ Then('I should be on the login success page', async () => {
             console.log('fail')
             return false
         });
+    // driver.close();
 
     // console.log(await driver.findElement(By.id('username')))
     // driver.executeScript(`
