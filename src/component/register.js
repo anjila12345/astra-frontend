@@ -13,32 +13,86 @@ class Signuppage extends React.Component {
             'password': '',
             'role': '',
             redirect: false,
-
+            fnameerror: '',
+            lnameerror: '',
+            roleerror: '',
+            emailerror: '',
+            passworderror: '',
+            usernameerror: ''
 
         }
     }
-
-    sendUser = (e) => {
-        e.preventDefault();
-
-        const data = {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            username: this.state.username,
-            email: this.state.email,
-            password: this.state.password,
+    setError = () => {
+        let isError = false;
+        const errors = {
+            fnameerror: '',
+            lnameerror: '',
+            doberror: '',
+            gendererror: '',
+            emailerror: '',
+            passworderror: '',
+            numbererror: ''
+        };
+        if (this.state.firstname === '') {
+            isError = true;
+            errors.fnameerror = "Enter First name";
         }
-        axios.post('http://localhost:3000/register', data).then(() => {
 
-            this.setState({
-                redirect: true
-            });
-            setTimeout(function () {
-                window.location.reload()
-            }, 1000);
+        if (this.state.lastname === '') {
+
+            isError = true;
+            errors.lnameerror = "Enter Last Name";
+        }
+
+
+        if (this.state.username === '') {
+            isError = true;
+            errors.usernameerror = "Enter Username";
+        }
+        if (this.state.role === '') {
+            isError = true;
+            errors.roleerror = "Enter Role";
+        }
+
+        const emailPattern = new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/);
+        if (!emailPattern.test(this.state.email)) {
+            isError = true;
+            errors.emailerror = "Enter valid Email Address";
+        }
+        if (this.state.password.length < 8) {
+            isError = true;
+            errors.passworderror = "Password must be atleast 8 character";
+        }
+
+        this.setState({
+            ...this.state,
+            ...errors
         })
 
+        return isError;
+    }
+    sendUser = (e) => {
+        e.preventDefault();
+        const err = this.setError();
+        if (!err) {
+            const data = {
+                firstname: this.state.firstname,
+                lastname: this.state.lastname,
+                username: this.state.username,
+                email: this.state.email,
+                password: this.state.password,
+            }
+            axios.post('http://localhost:3000/register', data).then(() => {
 
+                this.setState({
+                    redirect: true
+                });
+                setTimeout(function () {
+                    window.location.reload()
+                }, 1000);
+            })
+
+        }
 
     }
 
@@ -94,7 +148,7 @@ class Signuppage extends React.Component {
                                 <input className="form-control input" type="text" id="username" value={this.state.username} onChange={(event) =>
                                     this.setState({ username: event.target.value })} placeholder="Username" required />
                                 <error className="errormsg">
-                                    {this.state.numbererror}
+                                    {this.state.usernameerror}
                                 </error>
                                 <span class="glyphicon glyphicon-phone form-control-feedback"></span>
 

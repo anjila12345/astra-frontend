@@ -66,9 +66,9 @@ a:focus {
     position: relative;
     transition: all 0.3s ease; 
     padding: 25px;
-
     
 }
+
 .main-header .navbar-custom1 a{
     color: #fff;
     font-size: 20px;
@@ -92,7 +92,7 @@ a:focus {
 }
 .main-header .navbar-custom a:hover .title{
      
-    color:#1877f2;  
+    color:#3ec1d5;  
     
 }
 
@@ -977,4 +977,14 @@ color:#fff
 }
 .errormsg{
   color:red
+}
+.modelimg{
+  margin-bottom: 30px;
+}
+.modelhead{
+  margin-left: 200px;
+  margin-top:-150px;
+  margin-bottom:30px;
+  font-size: 20px;
+  font-weight: 600px;
 }

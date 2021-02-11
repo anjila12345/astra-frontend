@@ -225,7 +225,26 @@ class Post extends Component {
                 <div className="row post">
                     <div className="col-md-12 color-white commentname2">
                         <img src={"http://localhost:3000/image/" + this.props.post.user_id.image} style={{ marginTop: 15 }} className="img-circle" height="40px" width="40px" />
-                        <a className="post-title" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
+                        <a href="" className="post-title" data-target="#Modal" data-toggle="modal" ><strong>{this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</strong></a>
+                        <div id="Modal" class="modal fade" role="dialog">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <div class="modelimg">
+                                            <img src={"http://localhost:3000/image/" + this.props.post.user_id.image} style={{ marginTop: 15 }} height="150px" width="150px" />
+
+                                        </div>
+                                        <div class="modelhead">
+                                            <p>Fullname: {this.props.post.user_id.firstname + " " + this.props.post.user_id.lastname}</p>
+                                            <p>Email: {this.props.post.user_id.email}</p>
+                                            <p>Contact Number: 980000007</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="post-date"> {date.format(now, 'YYYY/MM/DD')}  </div>
                         <div className="btnsapply">
                             <button type="button" className="btn-primary apply" id="apply" style={{ marginTop: 15 }} onClick={() => this.apply} data-target="#myModal" data-toggle="modal">Apply</button>
@@ -302,7 +321,7 @@ class Post extends Component {
                                                     </div>
                                                     <div className="box-footer">
                                                         <div className="postdata">
-                                                            <button type="submit" id="send"onClick={this.apply} className="btn btn-primary" >Send</button>
+                                                            <button type="submit" id="send" onClick={this.apply} className="btn btn-primary" >Send</button>
                                                         </div>
 
                                                     </div>
