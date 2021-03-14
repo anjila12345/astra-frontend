@@ -112,7 +112,7 @@ class jobpost extends React.Component {
 
                                                 <div className="form-group">
                                                     <input className="form-control" id="experience" ref="text"
-                                                        name="experience" placeholder="Job title" value={this.state.experience} onChange={this.handleChange} />
+                                                        name="experience" placeholder="Experience" value={this.state.experience} onChange={this.handleChange} />
                                                 </div>
 
 

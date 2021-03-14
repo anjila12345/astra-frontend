@@ -49,10 +49,6 @@ class Signuppage extends React.Component {
             isError = true;
             errors.usernameerror = "Enter Username";
         }
-        if (this.state.role === '') {
-            isError = true;
-            errors.roleerror = "Enter Role";
-        }
 
         const emailPattern = new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/);
         if (!emailPattern.test(this.state.email)) {
